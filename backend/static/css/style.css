@@ -13971,6 +13971,13 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       font-size: 15px;
       border-color: #d1d1d1;
       border-radius: 6px; }
+  .sidebar-right .note-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    opacity: 0.8;
+    font-size: 12px; }
   .sidebar-right .sidebar-right-trigger {
     position: absolute;
     z-index: 9;
@@ -14053,7 +14060,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     margin: 0px 0px 0px 0px; }
   .sidebar-right .tab-content {
     padding: 1.25rem 1.25rem 0;
-    min-height: 370px;
+    min-height: 480px;
     background: #fff; }
     .sidebar-right .tab-content .tab-pane .admin-settings .row > div {
       margin-bottom: 20px; }
@@ -14585,7 +14592,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     padding: 30px 30px;
     background: #fff; }
   .dz-demo-panel .dz-demo-content {
-    height: calc(100vh - 140px); }
+    height: calc(100vh - 215px); }
   .dz-demo-panel .dz-demo-header {
     display: flex;
     justify-content: space-between;
