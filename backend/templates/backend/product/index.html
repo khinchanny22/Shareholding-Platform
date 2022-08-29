@@ -1,0 +1,38 @@
+{% extends 'layouts/backend.html' %}
+{% block content %}
+<div class="content-body">
+            <!-- row -->
+			<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="card-header"><h3>Products Listing</h3></div>
+            <div class="card-body">
+                <table class="table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Item</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Created</th>
+        <th>Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for products in product %}
+      <tr>
+        <td>{{ products.id}}</td>
+        <td>{{ products.product_name}}</td>
+        <td>{{ products.product_description }}</td>
+        <td>{{ products.product_quantity }}</td>
+        <td>{{ products.created_at }}</td>
+        <td>{{ products.updated_at }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+            </div>
+        </div>
+    </div>
+            </div></div>
+{% endblock %}
