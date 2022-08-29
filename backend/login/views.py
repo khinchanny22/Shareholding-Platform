@@ -9,7 +9,7 @@ from .models import Users
 
 # Create your views here.
 
-def signin(request):
+def Login(request):
     if request.method == 'POST':
         username = request.POST['username']
         pass1 = request.POST['pass1']
@@ -20,12 +20,12 @@ def signin(request):
             login(request, user)
             fname = user.first_name
             # messages.success(request, "Logged In Successfully!!")
-            return render(request, "frontend/index.html", {"fname": fname})
+            return render(request, "backend/login/index.html", {"fname": fname})
         else:
             messages.error(request, "Bad Credentials!!")
             return redirect('Dashboard')
 
-    return render(request, "frontend/index.html")
+    return render(request, "backend/login/index.html")
 
 
 def signout(request):
