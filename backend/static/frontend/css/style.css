@@ -12235,7 +12235,7 @@ ol.commentlist li::after {
 
 .bg-repeat{background-repeat:repeat;}
 .bg-no-repeat{	background-repeat:no-repeat;}
-.bg-repeat-x{background-repeat:repeat-x;}
+.bg-repeat-x{/* background-repeat:repeat-x; */background: #171f2c;}
 .bg-repeat-y{background-repeat:repeat-y;}
 
 .bg-fixed{background-attachment:fixed;}
