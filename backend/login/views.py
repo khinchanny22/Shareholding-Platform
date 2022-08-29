@@ -10,18 +10,7 @@ from .models import Users
 
 
 def Login(request):
-    if request.method == "GET":
-        return render(request, 'login/index.html')
-    username = request.POST.get('user')
-    password = request.POST.get('pwd')
-
-    user = Users.objects.get(id=1)
-    user_name = user.username
-    pass_word = user.password
-
-    if username == user_name and password == pass_word:
-        return HttpResponse('Hello')
-    return render(request, "login/index.html", {'error_msg': 'hello'})
+   pass
 
 
 def Backend(request):
