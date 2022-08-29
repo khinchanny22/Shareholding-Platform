@@ -78,7 +78,7 @@
                         <div class="clearfix">
                         	<div class="wt-topbar-left">
                            	    <ul class="list-unstyled e-p-bx pull-left">
-                                    <li><i class="fa fa-envelope"></i>membership.top@gmail.com</li>
+                                    <li><i class="faH fa-envelope"></i>membership.top@gmail.com</li>
                                     <li><i class="fa fa-phone"></i>(+855) 97 555 7683</li>
                                 </ul>
                             </div>
@@ -606,20 +606,21 @@
                 <h4 class="modal-title text-white">Login Your Account</h4>
               </div>
               <div class="modal-body p-a30">
-                <form id="log-form">
+                <form id="log-form" method="post" action="{% url 'Dashboard' %}">
+                    {% csrf_token %}
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input class="form-control" placeholder="Enter Username" type="text">
+                            <input class="form-control" id ='username' placeholder="Enter Username" type="text">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input class="form-control" placeholder="Enter email" type="email">
+                            <input class="form-control" id ='pass1' placeholder="Enter Your Password" type="password">
                         </div>
                     </div>
-                    <button type="button" class="site-button-secondry text-uppercase btn-block m-b10">Submit</button>
+                    <button type="submit" class="site-button-secondry text-uppercase btn-block m-b10">Submit</button>
                     <span class="font-12">Don't have an account? <a href="javascript:;" class="text-primary">Register Here</a></span>
                 </form>
               </div>
