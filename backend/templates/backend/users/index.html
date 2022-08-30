@@ -1,0 +1,48 @@
+{% extends 'layouts/backend.html' %}
+{% block content %}
+<div class="content-body">
+            <!-- row -->
+			<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="card-header">
+                <div class="col"><h3>List Users Management</h3></div>
+                <div class="col"><h3 class="text-end"><a href="{% url 'AddCustomers' %}">Add User</a></h3></div>
+            </div>
+            <div class="card-body">
+                <table class="table">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>User</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Last Login</th>
+        <th>Date Joined</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for data in users %}
+      <tr>
+        <td>{{ data.id}}</td>
+        <td>{{ data.username}}</td>
+        <td>{{ data.first_name}}</td>
+        <td>{{ data.last_name}}</td>
+        <td>{{ data.email}}</td>
+        <td>{{ data.last_login}}</td>
+        <td>{{ data.date_joined}}</td>
+        <td>
+            <a href="#" class="btn btn-sm btn-primary">View</a>
+            <a href="#" class="btn btn-sm btn-success">Update</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+            </div>
+        </div>
+    </div>
+            </div></div>
+{% endblock %}
