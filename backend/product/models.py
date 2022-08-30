@@ -14,3 +14,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
+
+
+class ProductPrice(models.Model):
+    product_name = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product_price = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.product_name)
