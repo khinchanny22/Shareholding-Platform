@@ -38,6 +38,20 @@ def AddProductPrice(request):
     return render(request, 'backend/product_price/create.html', {'form': form})
 
 
+def UpdateProducePrice(request, id):
+    context = {}
+
+    obj = get_object_or_404(ProductPrice, id=id)
+
+    form = ProductPriceForm(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+        return redirect('ProductCost')
+
+    context["form"] = form
+    return render(request, 'backend/product_price/update.html', context)
+
+
 def AddProduct(request):
     if request.method == "POST":
         form = ProductForm(request.POST)

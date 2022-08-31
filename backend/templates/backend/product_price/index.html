@@ -33,7 +33,7 @@
                             <td>{{ products.updated_at }}</td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-primary">View</a>
-                                <a href="#" class="btn btn-sm btn-success">Update</a>
+                                <a href="{% url 'UpdateProducePrice' products.id %}" class="btn btn-sm btn-success">Update</a>
                             </td>
                         </tr>
                         {% endfor %}

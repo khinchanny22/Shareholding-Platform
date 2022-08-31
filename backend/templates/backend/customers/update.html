@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-header"><h4>Add Customers</h4></div>
             <div class="card-body">
-                <form action="" method="post">
+                <form action="" method="post">{% load crispy_forms_tags %}
                     {% csrf_token %}
                     <div class="row">
                         <div class="col">{{ form.customer_name|as_crispy_field }}</div>
