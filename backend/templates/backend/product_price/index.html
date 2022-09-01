@@ -16,7 +16,6 @@
                             <th>No</th>
                             <th>Item</th>
                             <th>Price</th>
-                            <th>Quantity</th>
                             <th>Created</th>
                             <th>Updated</th>
                             <th>Action</th>
@@ -28,11 +27,11 @@
                             <td>{{ products.id}}</td>
                             <td>{{ products.product_name}}</td>
                             <td>$ {{ products.product_price }}</td>
-                            <td>{{ products.product_quantity }}</td>
                             <td>{{ products.created_at }}</td>
                             <td>{{ products.updated_at }}</td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-primary">View</a>
+                                <a href="#" class="btn btn-sm btn-outline-success">Seller</a>
                                 <a href="{% url 'UpdateProducePrice' products.id %}" class="btn btn-sm btn-success">Update</a>
                             </td>
                         </tr>
