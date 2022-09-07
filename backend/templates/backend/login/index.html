@@ -20,7 +20,11 @@
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
+    <style>
+        img.logo-backend {
+    width: 100%;
+}
+    </style>
 </head>
 
 <body class="vh-100">
@@ -33,7 +37,7 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
 									<div class="text-center mb-3">
-										<a href="{% url 'frontend' %}"><img src="{% static 'images/logo-full.png' %}" alt=""></a>
+										<a href="{% url 'frontend' %}"><img class="logo-backend" src="{% static 'images/logo-full.png' %}" alt=""></a>
 									</div>
                                     <h4 class="text-center mb-4">Sign in your account</h4>
                                     <form action="{% url 'Dashboard' %}" method="post">
