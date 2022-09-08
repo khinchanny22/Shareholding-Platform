@@ -18,7 +18,7 @@
 	<title>Welcome to ShareHolding Platform</title>
 
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
 
 	<link href="{% static 'vendor/owl-carousel/owl.carousel.css' %} " rel="stylesheet">
 	<link href="{% static 'vendor/jquery-nice-select/css/nice-select.css' %}" rel="stylesheet">
@@ -803,8 +803,8 @@
 							<span class="nav-text">Seller</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="#">Products</a></li>
-							<li><a href="#">Post Details</a></li>
+                            <li><a href="#">Seller Share</a></li>
+							<li><a href="#">List Invoice Seller</a></li>
                         </ul>
                     </li>
 					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -812,8 +812,8 @@
 							<span class="nav-text">Buyer</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="{% url 'ProductIndex' %}">Share</a></li>
-							<li><a href="#">Post Details</a></li>
+                            <li><a href="{% url 'ProductIndex' %}">Buyer Share</a></li>
+							<li><a href="#">List Invoice Buyer</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -822,7 +822,7 @@
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="{% url 'Customers' %}">Customers</a></li>
-                            <li><a href="#">Morris</a></li>
+{#                              <li><a href="#">Morris</a></li>#}
 <!--                            <li><a href="./chart-chartjs.html">Chartjs</a></li>-->
 <!--                            <li><a href="./chart-chartist.html">Chartist</a></li>-->
 <!--                            <li><a href="./chart-sparkline.html">Sparkline</a></li>-->
@@ -835,9 +835,8 @@
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="{% url 'User' %}">Users Management</a></li>
-
-                            <li><a href="#">Grid</a></li>
-
+                            <li><a href="#">User Permission</a></li>
+                            <li><a href="#">User Role</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -849,54 +848,54 @@
 
                         </ul>
                     </li>
-                    <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
-							<i class="flaticon-013-checkmark"></i>
-							<span class="nav-text">Widget</span>
-						</a>
-					</li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-072-printer"></i>
-							<span class="nav-text">Forms</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="#">Form Elements</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-043-menu"></i>
-							<span class="nav-text">Table</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="#">Bootstrap</a></li>
-                            <li><a href="#">Datatable</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-022-copy"></i>
-							<span class="nav-text">Pages</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Register</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="#">Error 400</a></li>
-                                    <li><a href="#">Error 403</a></li>
-                                    <li><a href="#">Error 404</a></li>
-                                    <li><a href="#">Error 500</a></li>
-                                    <li><a href="#">Error 503</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Lock Screen</a></li>
-                            <li><a href="#">Empty Page</a></li>
-                        </ul>
-                    </li>
+{#                    <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">#}
+{#							<i class="flaticon-013-checkmark"></i>#}
+{#							<span class="nav-text">Widget</span>#}
+{#						</a>#}
+{#					</li>#}
+{#                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">#}
+{#							<i class="flaticon-072-printer"></i>#}
+{#							<span class="nav-text">Forms</span>#}
+{#						</a>#}
+{#                        <ul aria-expanded="false">#}
+{#                            <li><a href="#">Form Elements</a></li>#}
+{##}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">#}
+{#							<i class="flaticon-043-menu"></i>#}
+{#							<span class="nav-text">Table</span>#}
+{#						</a>#}
+{#                        <ul aria-expanded="false">#}
+{#                            <li><a href="#">Bootstrap</a></li>#}
+{#                            <li><a href="#">Datatable</a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">#}
+{#							<i class="flaticon-022-copy"></i>#}
+{#							<span class="nav-text">Pages</span>#}
+{#						</a>#}
+{#                        <ul aria-expanded="false">#}
+{#                            <li><a href="#">Login</a></li>#}
+{#                            <li><a href="#">Register</a></li>#}
+{#                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>#}
+{#                                <ul aria-expanded="false">#}
+{#                                    <li><a href="#">Error 400</a></li>#}
+{#                                    <li><a href="#">Error 403</a></li>#}
+{#                                    <li><a href="#">Error 404</a></li>#}
+{#                                    <li><a href="#">Error 500</a></li>#}
+{#                                    <li><a href="#">Error 503</a></li>#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                            <li><a href="#">Lock Screen</a></li>#}
+{#                            <li><a href="#">Empty Page</a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
                 </ul>
-				<div class="copyright">
-					<p><strong>KHIN Channy | Admin Dashboard</strong> © 2022 All Rights Reserved</p>
-					<p class="fs-12">Made with <span class="heart"></span> by KHIN CHANNY</p>
-				</div>
+{#				<div class="copyright">#}
+{#					<p><strong>KHIN Channy | Admin Dashboard</strong> © 2022 All Rights Reserved</p>#}
+{#					<p class="fs-12">Made with <span class="heart"></span> by KHIN CHANNY</p>#}
+{#				</div>#}
 			</div>
         </div>
         <!--**********************************
