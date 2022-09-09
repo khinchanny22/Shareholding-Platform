@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'seller.apps.SellerConfig',
+    'buyer.apps.BuyerConfig',
     'customer.apps.CustomerConfig',
     'product.apps.ProductConfig',
     'dashboard.apps.DashboardConfig',

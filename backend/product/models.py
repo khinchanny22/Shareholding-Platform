@@ -23,4 +23,4 @@ class ProductPrice(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.product_name)
+        return str(self.product_price)
