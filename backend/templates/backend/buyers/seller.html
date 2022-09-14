@@ -7,10 +7,27 @@
             <div class="card">
                 <div class="card-header">
                     <div class="col"><h3>Selling Share</h3></div>
-                    <div class="col"><h3 class="text-end"><a class="text-blue" href="#">Add Product Share</a></h3></div>
+                    <div class="col"><h3 class="text-end"><a href="#">Add Product Share</a></h3></div>
                 </div>
             <div class="card-body">
-                <h2>Hello World</h2>
+               <form action="" method="post">
+                    {% csrf_token %}{% load crispy_forms_tags %}
+                    <div class="row">
+                        <div class="col">{{ form.customer_name|as_crispy_field }}</div>
+                        <div class="col">{{ form.share_name|as_crispy_field }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">{{ form.share_quantity|as_crispy_field }}</div>
+                        <div class="col">{{ form.share_pricing|as_crispy_field }}</div>
+                    </div>
+                   <div class="row">
+                        <div class="col">{{ form.buyer_share_tax|as_crispy_field }}</div>
+                        <div class="col"></div>
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
             </div>
             </div>
         </div>
