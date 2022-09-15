@@ -8,6 +8,7 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = "__all__"
 
+
 class ProductPriceForm(forms.ModelForm):
     class Meta:
         model = ProductPrice
