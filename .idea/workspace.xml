@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a5cb354-49c7-4373-a787-f4e1d062f002" name="Changes" comment="add">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/activate.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/activate.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/login/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/templates/backend/login/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/templates/backend/login/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/templates/layouts/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/customers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/customers/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/login/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/layouts/backend.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/layouts/backend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/layouts/frontend.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/layouts/frontend.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>

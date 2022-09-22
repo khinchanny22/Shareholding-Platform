@@ -1,90 +1,32 @@
-<!DOCTYPE html>
-<html lang="en" class="h-100">
-{% load static %}
-<head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
-	<meta name="robots" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Boltz : Crypto Admin Template" />
-	<meta property="og:title" content="Boltz : Crypto Admin Template" />
-	<meta property="og:description" content="Boltz : Crypto Admin Template" />
-	<meta property="og:image" content="https://boltz.dexignzone.com/xhtml/social-image.png" />
-	<meta name="format-detection" content="telephone=no">
-	
-	<!-- PAGE TITLE HERE -->
-	<title>Welcome to ShareHolding Platform</title>
-	
-	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
-    <style>
-        img.logo-backend {
-    width: 100%;
-}
-    </style>
-</head>
+{% extends "layouts/base.html" %}
 
-<body class="vh-100">
-    <div class="authincation h-100">
-        <div class="container h-100">
-            <div class="row justify-content-center h-100 align-items-center">
-                <div class="col-md-6">
-                    <div class="authincation-content">
-                        <div class="row no-gutters">
-                            <div class="col-xl-12">
-                                <div class="auth-form">
-									<div class="text-center mb-3">
-										<a href="{% url 'frontend' %}"><img class="logo-backend" src="{% static 'images/logo-full.png' %}" alt=""></a>
-									</div>
-                                    <h4 class="text-center mb-4">Sign in your account</h4>
-                                    <form action="{% url 'Dashboard' %}" method="post">
-                                         {% csrf_token %}
-                                        <div class="mb-3">
-                                            <label class="mb-1"><strong>User Name</strong></label>
-                                            <input type="text" id='username' class="form-control" placeholder="Enter Your Name" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" id ='pass1' class="form-control" placeholder="Enter Your Password" required>
-                                        </div>
-                                        <div class="row d-flex justify-content-between mt-4 mb-2">
-                                            <div class="mb-3">
-                                               <div class="form-check custom-checkbox ms-1">
-													<input type="checkbox" class="form-check-input" id="basic_checkbox_1">
-													<label class="form-check-label" for="basic_checkbox_1">Remember my preference</label>
-												</div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <a href="page-forgot-password.html">Forgot Password?</a>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="submit" class="btn btn-primary btn-block">Sign Me In</button>
-                                        </div>
-                                    </form>
-                                    <div class="new-account mt-3">
-                                        <p>Don't have an account? <a class="text-primary" href="#">Sign up</a></p>
-                                    </div>
-                                </div>
-                            </div>
+{% block content %}
+
+    {% load crispy_forms_tags %}
+    {% load static %}
+
+    <!--Login-->
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-header"><h3 class="text-center">Login Application</h3></div>
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ login_form.username|crispy }}<br>
+                            <button class="btn btn-primary" type="submit">Login</button>
+                        </form>
+                        <div>
+                        <p>Don't have an account? <a href="{% url 'register' %}">Create an account</a>.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col"></div>
         </div>
+
     </div>
 
-
-    <!--**********************************
-        Scripts
-    ***********************************-->
-    <!-- Required vendors -->
-    <script src="{% static 'vendor/global/global.min.js' %}"></script>
-    <script src="{% static 'js/custom.min.js' %}"></script>
-    <script src="{% static 'js/deznav-init.js' %}"></script>
-	
-</body>
-</html>
+{% endblock %}
