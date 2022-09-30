@@ -37,7 +37,6 @@ def register_request(request):
     return render(request=request, template_name="backend/login/register.html", context={"register_form": form})
 
 
-
 def login_request(request):
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
@@ -54,7 +53,7 @@ def login_request(request):
         else:
             messages.error(request, "Invalid username or password.")
     form = AuthenticationForm()
-    return render(request, template_name="backend/login/login.html", context={"login_form": form})
+    return render(request, template_name="backend/login/index.html", context={"login_form": form})
 
 
 @login_required()

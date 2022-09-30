@@ -54,7 +54,7 @@ def UpdateProducePrice(request, id):
 
 def AddProduct(request):
     if request.method == "POST":
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             try:
                 form.save()
@@ -79,3 +79,6 @@ def UpdateProduct(request, id):
 
     context["form"] = form
     return render(request, 'backend/product/update.html', context)
+
+
+

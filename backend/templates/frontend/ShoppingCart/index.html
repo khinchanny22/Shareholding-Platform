@@ -1,0 +1,319 @@
+{% extends 'layouts/products.html' %}
+{% block content %}
+{% load static %}
+        <!-- CONTENT START -->
+        <div class="page-content">
+
+            <!-- INNER PAGE BANNER -->
+{#            <div class="wt-bnr-inr overlay-wraper" style="background-image:url({% static 'frontend/images/banner/about-banner.jpg' %});">#}
+            <div class="wt-bnr-inr overlay-wraper" style="background-image:url({% static 'frontend/images/banner/product-banner.jpg' %});">
+                <div class="overlay-main bg-black opacity-05"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <h1 class="text-white">Shopping Cart</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+
+            <!-- BREADCRUMB ROW -->
+            <div class="bg-gray-light p-tb20">
+                <div class="container">
+                    <ul class="wt-breadcrumb breadcrumb-style-1">
+                        <li><a href="javascript:void(0);">Home</a></li>
+                        <li>Shopping Cart</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- BREADCRUMB  ROW END -->
+
+            <!-- OUR BEST SERVICES SECTION  START-->
+            <div class="section-full text-center p-tb50">
+                <div class="container">
+
+                    <div class="section-content">
+                        <div class="p-b30">
+                            <h2 class="text-uppercase">Shopping Cart</h2>
+                            <div class="wt-separator-outer">
+                                <div class="wt-separator bg-primary"></div>
+                            </div>
+                        </div>
+                        <div id="no-more-tables">
+                            <table class="table-bordered  table-condensed cf wt-responsive-table shopping-table">
+                                <thead class="cf text-center bg-primary">
+                                    <tr>
+                                        <th>IMAGE</th>
+                                        <th>PRODUCT NAME</th>
+                                        <th class="numeric">UNIT PRICE</th>
+                                        <th class="numeric">STOCK STATUS</th>
+                                        <th class="numeric">TOTAL</th>
+                                        <th class="numeric">REMOVE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-title="Code"><img src="{% static 'frontend/images/cart/thumb/pic-2.jpg' %}" alt=""></td>
+                                        <td data-title="Company">Prduct Item 1</td>
+                                        <td data-title="Price" class="numeric">$35.00</td>
+                                        <td data-title="Change" class="numeric">In Stock</td>
+                                        <td data-title="Change %" class="numeric"><button class="site-button  button-sm" type="button">Add to Cart</button></td>
+                                        <td data-title="Open" class="numeric"><a href="#"><i class="fa fa-times"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="Code"><img src="{% static 'frontend/images/cart/thumb/pic-3.jpg/' %}" alt=""></td>
+                                        <td data-title="Company">Prduct Item 2</td>
+                                        <td data-title="Price" class="numeric">$15.00</td>
+                                        <td data-title="Change" class="numeric">In Stock</td>
+                                        <td data-title="Change %" class="numeric"><button class="site-button button-sm" type="button">Add to Cart</button></td>
+                                        <td data-title="Open" class="numeric"><a href="#"><i class="fa fa-times"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="Code"><img src="{% static 'frontend/images/cart/thumb/pic-4.jpg' %}" alt=""></td>
+                                        <td data-title="Company">Prduct Item 3</td>
+                                        <td data-title="Price" class="numeric">$28.00</td>
+                                        <td data-title="Change" class="numeric">In Stock</td>
+                                        <td data-title="Change %" class="numeric"><button class="site-button button-sm" type="button">Add to Cart</button></td>
+                                        <td data-title="Open" class="numeric"><a href="#"><i class="fa fa-times"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="Code"><img src="{% static 'frontend/images/cart/thumb/pic-5.jpg' %}" alt=""></td>
+                                        <td data-title="Company">Prduct Item 4</td>
+                                        <td data-title="Price" class="numeric">$36.00</td>
+                                        <td data-title="Change" class="numeric">In Stock</td>
+                                        <td data-title="Change %" class="numeric"><button class="site-button button-sm" type="button">Add to Cart</button></td>
+                                        <td data-title="Open" class="numeric"><a href="#"><i class="fa fa-times"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td data-title="Code"><img src="{% static 'frontend/images/cart/thumb/pic-6.jpg' %}" alt=""></td>
+                                        <td data-title="Company">Prduct Item 5</td>
+                                        <td data-title="Price" class="numeric">$28.00</td>
+                                        <td data-title="Change" class="numeric">In Stock</td>
+                                        <td data-title="Change %" class="numeric"><button class="site-button button-sm" type="button">Add to Cart</button></td>
+                                        <td data-title="Open" class="numeric"><a href="#"><i class="fa fa-times"></i></a></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="cart-buttons text-right">
+                                <a href="#" class="m-b15 site-button-secondry m-r15 text-uppercase">Update Cart</a>
+                                <a href="#" class="m-b15 site-button text-uppercase">Continue Shopping</a>
+                                <table class="table-bordered  table-condensed cf wt-responsive-table">
+                                    <thead class="cf text-center bg-primary">
+                                        <tr>
+                                            <th>TOTAL</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-title="Total">$300.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                	</div>
+
+                </div>
+            </div>
+            <!-- OUR BEST SERVICES SECTION END -->
+
+            <!-- SECTION CONTENT START -->
+            <div class="section-full p-b50">
+
+				<!-- PRODUCT DETAILS -->
+            	<div class="container woo-entry">
+                    <!-- TITLE START -->
+                     <div class="p-b10">
+                            <h2 class="">Realated products</h2>
+                            <div class="wt-separator-outer  m-b30">
+                                <div class="wt-separator bg-primary"></div>
+                            </div>
+                    	</div>
+                    <!-- TITLE END -->
+                    <div class="row m-b30">
+
+                        	<!-- COLUMNS 1 -->
+                            <div class="col-md-3 col-sm-6 col-xs-6 col-xs-100pc m-b30">
+                                <div class="wt-box wt-product-box bg-gray p-a10">
+                                    <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom">
+                                        <img src="{% static 'frontend/images/products/pic-1.jpg' %}" alt="">
+                                        <div class="overlay-bx">
+                                            <div class="overlay-icon">
+                                                <a href="javascript:void(0);">
+                                                    <i class="fa fa-cart-plus wt-icon-box-xs"></i>
+                                                </a>
+                                                <a class="mfp-link" href="javascript:void(0);">
+                                                    <i class="fa fa-heart wt-icon-box-xs"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wt-info  text-center  bg-white">
+                                         <div class="p-a10">
+                                            <h4 class="wt-title">
+                                            	<a href="javascript:;">Five Martines</a>
+                                            </h4>
+                                            <span class="price">
+                                                <del>
+                                                     <span><span class="Price-currencySymbol">£</span>3.00</span>
+                                                </del>
+                                                <ins>
+                                                	<span><span class="Price-currencySymbol">£</span>2.00</span>
+                                                </ins>
+                                            </span>
+                                            <div class="rating-bx">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="p-t10">
+                                            	<button class="site-button button-sm" type="button">ADD TO CART</button>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- COLUMNS 2 -->
+                            <div class="col-md-3 col-sm-6 col-xs-6 col-xs-100pc m-b30">
+                                <div class="wt-box wt-product-box bg-gray p-a10">
+                                    <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom">
+                                        <img src="{% static 'frontend/images/products/pic-2.jpg' %}" alt="">
+                                        <div class="overlay-bx">
+                                            <div class="overlay-icon">
+                                                <a href="javascript:void(0);">
+                                                    <i class="fa fa-cart-plus wt-icon-box-xs"></i>
+                                                </a>
+                                                <a class="mfp-link" href="javascript:void(0);">
+                                                    <i class="fa fa-heart wt-icon-box-xs"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wt-info  text-center  bg-white">
+                                         <div class="p-a10">
+                                            <h4 class="wt-title">
+                                            	<a href="javascript:;">Five Martines</a>
+                                            </h4>
+                                            <span class="price">
+                                                <del>
+                                                     <span><span class="Price-currencySymbol">£</span>3.00</span>
+                                                </del>
+                                                <ins>
+                                                	<span><span class="Price-currencySymbol">£</span>2.00</span>
+                                                </ins>
+                                            </span>
+                                            <div class="rating-bx">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="p-t10">
+                                            	<button class="site-button button-sm" type="button">ADD TO CART</button>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- COLUMNS 3 -->
+                            <div class="col-md-3 col-sm-6 col-xs-6 col-xs-100pc m-b30">
+                                <div class="wt-box wt-product-box bg-gray p-a10">
+                                    <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom">
+                                        <img src="{% static 'frontend/images/products/pic-3.jpg' %}" alt="">
+                                        <div class="overlay-bx">
+                                            <div class="overlay-icon">
+                                                <a href="javascript:void(0);">
+                                                    <i class="fa fa-cart-plus wt-icon-box-xs"></i>
+                                                </a>
+                                                <a class="mfp-link" href="javascript:void(0);">
+                                                    <i class="fa fa-heart wt-icon-box-xs"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wt-info  text-center  bg-white">
+                                         <div class="p-a10">
+                                            <h4 class="wt-title">
+                                            	<a href="javascript:;">Five Martines</a>
+                                            </h4>
+                                            <span class="price">
+                                                <del>
+                                                     <span><span class="Price-currencySymbol">£</span>3.00</span>
+                                                </del>
+                                                <ins>
+                                                	<span><span class="Price-currencySymbol">£</span>2.00</span>
+                                                </ins>
+                                            </span>
+                                            <div class="rating-bx">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="p-t10">
+                                            	<button class="site-button button-sm" type="button">ADD TO CART</button>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- COLUMNS 4 -->
+                            <div class="col-md-3 col-sm-6 col-xs-6 col-xs-100pc m-b30">
+                                <div class="wt-box wt-product-box bg-gray p-a10">
+                                    <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom">
+                                        <img src="{% static 'frontend/images/products/pic-4.jpg' %}" alt="">
+                                        <div class="overlay-bx">
+                                            <div class="overlay-icon">
+                                                <a href="javascript:void(0);">
+                                                    <i class="fa fa-cart-plus wt-icon-box-xs"></i>
+                                                </a>
+                                                <a class="mfp-link" href="javascript:void(0);">
+                                                    <i class="fa fa-heart wt-icon-box-xs"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wt-info  text-center  bg-white">
+                                         <div class="p-a10">
+                                            <h4 class="wt-title">
+                                            	<a href="javascript:;">Five Martines</a>
+                                            </h4>
+                                            <span class="price">
+                                                <del>
+                                                     <span><span class="Price-currencySymbol">£</span>3.00</span>
+                                                </del>
+                                                <ins>
+                                                	<span><span class="Price-currencySymbol">£</span>2.00</span>
+                                                </ins>
+                                            </span>
+                                            <div class="rating-bx">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="p-t10">
+                                            	<button class="site-button button-sm" type="button">ADD TO CART</button>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+				</div>
+				<!-- PRODUCT DETAILS -->
+
+			</div>
+            <!-- CONTENT CONTENT END -->
+        </div>
+        <!-- CONTENT END -->
+
+{% endblock %}

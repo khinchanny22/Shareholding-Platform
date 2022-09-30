@@ -114,7 +114,7 @@ ol.list-num-count > li::before,
 .masonry-filter.button-style.has-bg > li.active a,
 .masonry-filter.button-style.has-bg > li a:hover,
 .searchform input[type="submit"] {
-	background-color:#FF9800;
+	background-color:red;
 }
 
 /* Premery hex buttons bg color*/
