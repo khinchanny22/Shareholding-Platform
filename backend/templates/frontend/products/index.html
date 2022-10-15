@@ -4,6 +4,10 @@
     <!-- CONTENT START -->
        <div class="page-content">
 
+            {% for products in product %}
+           <img src="{{ products.product_image }}" alt="">
+
+            {% endfor %}
            <!-- INNER PAGE BANNER -->
             <div class="wt-bnr-inr overlay-wraper" style="background-image:url({% static 'frontend/images/banner/product-banner.jpg' %});">
             	<div class="overlay-main bg-black opacity-07"></div>

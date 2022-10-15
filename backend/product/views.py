@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
 from .forms import ProductForm, ProductPriceForm
+from .functions import handle_uploaded_file
 from .models import *
 
 
@@ -53,15 +54,11 @@ def UpdateProducePrice(request, id):
 
 
 def AddProduct(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            try:
-                form.save()
-                model = form.instance
-                return redirect('ProductIndex')
-            except:
-                pass
+            form.save()
+            return redirect('ProductIndex')
     else:
         form = ProductForm()
     return render(request, 'backend/product/create.html', {'form': form})
