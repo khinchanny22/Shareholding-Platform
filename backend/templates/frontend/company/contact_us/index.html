@@ -1,0 +1,119 @@
+{% extends 'layouts/products.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-content">
+    <!--Section: Contact v.2-->
+
+    <!-- INNER PAGE BANNER -->
+    <div class="wt-bnr-inr overlay-wraper"
+         style="background-image:url({% static 'frontend/images/banner/product-banner.jpg' %});">
+        <div class="overlay-main bg-black opacity-07"></div>
+        <div class="container">
+            <div class="wt-bnr-inr-entry">
+                <h1 class="text-white">Contact Us</h1>
+            </div>
+        </div>
+    </div>
+    <!-- INNER PAGE BANNER END -->
+    <!-- BREADCRUMB ROW -->
+    <div class="bg-gray-light p-tb20">
+        <div class="container">
+            <ul class="wt-breadcrumb breadcrumb-style-2">
+                <li><a href="javascript:void(0);"><i class="fa fa-home"></i> Company</a></li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+    </div>
+    <!-- BREADCRUMB ROW END -->
+
+    <div class="container">
+        <div class="row">
+            <h2>Company</h2>
+            <p class="text-justify">Finish the task at hand with little thought or time put into it. When I was assigned my first paper in Writing and Critical Inquiry, assigned by my professor Darcy Mullen, I looked at the topic (experience paper: how humor has affected you as a writer) and said to myself “First off, how am I supposed to write about the influences of humor within my writing?” and “ This will just be a quick five page paper that I can easily get at least a B on just by bull-shitting about the effects of humor in my writing”. At first I thought the class would be just like any other class that I could half ass my papers and get by but later I came to the realization that I was in for of a writing experience more than I had originally thought; my first thought</p>
+            <p class="text-justify">Finish the task at hand with little thought or time put into it. When I was assigned my first paper in Writing and Critical Inquiry, assigned by my professor Darcy Mullen, I looked at the topic (experience paper: how humor has affected you as a writer) and said to myself “First off, how am I supposed to write about the influences of humor within my writing?” and “ This will just be a quick five page paper that I can easily get at least a B on just by bull-shitting about the effects of humor in my writing”. At first I thought the class would be just like any other class that I could half ass my papers and get by but later I came to the realization that I was in for of a writing experience more than I had originally thought; my first thought</p>
+            <p class="text-justify">Finish the task at hand with little thought or time put into it. When I was assigned my first paper in Writing and Critical Inquiry, assigned by my professor Darcy Mullen, I looked at the topic (experience paper: how humor has affected you as a writer) and said to myself “First off, how am I supposed to write about the influences of humor within my writing?” and “ This will just be a quick five page paper that I can easily get at least a B on just by bull-shitting about the effects of humor in my writing”. At first I thought the class would be just like any other class that I could half ass my papers and get by but later I came to the realization that I was in for of a writing experience more than I had originally thought; my first thought</p>
+        </div>
+        <br><br><br>
+        <div class="card">
+            <div class="card-header"></div>
+
+            <div class="card-body">{% load crispy_forms_tags %}
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Contact Us</h2>
+                            {{ form.username|as_crispy_field }}
+                            {{ form.email|as_crispy_field }}
+                            {{ form.subject|as_crispy_field }}
+                            {{ form.message|as_crispy_field }}
+                        </div>
+                        <div class="col-md-6">
+                            <h2>CONTACT DETAIL</h2>
+
+                            <div class="m-b30">
+                                <div class="wt-icon-box-wraper bx-style-1 p-a15 left clearfix bg-gray">
+                                    <div class="icon-sm">
+                                        <span class="icon-cell text-primary">
+                                            <i class="fa fa-phone"></i>
+                                        </span>
+                                    </div>
+                                    <div class="icon-content text-black">
+                                        <h5 class="wt-tilte text-uppercase">Phone</h5>
+                                        <p>+855 97 555 7683</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-b30">
+                                <div class="wt-icon-box-wraper bx-style-1 p-a15 left clearfix bg-gray">
+                                    <div class="icon-sm">
+                                        <span class="icon-cell text-primary">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                    <div class="icon-content text-black">
+                                        <h5 class="wt-tilte text-uppercase">Email</h5>
+                                        <p>membership.top@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-b30">
+                                <div class="wt-icon-box-wraper bx-style-1 p-a15 left clearfix bg-gray">
+                                    <div class="icon-sm">
+                                        <span class="icon-cell text-primary">
+                                            <i class="fa fa-fax"></i>
+                                        </span>
+                                    </div>
+                                    <div class="icon-content text-black">
+                                        <h5 class="wt-tilte text-uppercase">Fax</h5>
+                                        <p>+855 97 555 7683</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="m-b30">
+                                <div class="wt-icon-box-wraper bx-style-1 p-a15 left clearfix bg-gray">
+                                    <div class="icon-sm">
+                                        <span class="icon-cell text-primary">
+                                            <i class="fa fa-map-marker"></i>
+                                        </span>
+                                    </div>
+                                    <div class="icon-content text-black">
+                                        <h5 class="wt-tilte text-uppercase">Address</h5>
+                                        <p>12000 Phnom Penh, KH</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Save Info</button>
+                </form>
+                <br><br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

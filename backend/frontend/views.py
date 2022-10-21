@@ -14,8 +14,6 @@ def frontend(request):
 
 def FrontendProducts(request):
     product = Product.objects.order_by('-id')
-    return HttpResponse(product)
-    exit()
 
     content = {
         'product': product,

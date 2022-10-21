@@ -1,4 +1,5 @@
 {% extends 'layouts/backend.html' %}
+{% load static %}
 {% block content %}
 <div class="content-body">
     <!-- row -->
@@ -30,7 +31,7 @@
                             <td>{{ products.product_name}}</td>
                             <td>{{ products.product_description }}</td>
                             <td>{{ products.product_quantity }}</td>
-                            <td><img src="/media/media/{{ products.product_image.url }}" alt=""></td>
+                            <td><img src="{{ products.product_image}}" alt=""> </td>
                             <td>{{ products.created_at }}</td>
                             <td>{{ products.updated_at }}</td>
                             <td>
