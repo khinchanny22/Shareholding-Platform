@@ -10,6 +10,7 @@
       <change afterPath="$PROJECT_DIR$/backend/media/blog/Cambodia-Water-1_kkkrVMi.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/blog/Cambodia-Water-1_vneEVGS.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/blog/coca.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/media/blog/pepsi-01.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/upload/2022-05-25_09.22.35.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/upload/287526394_750748479450706_5466987104808282876_n.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/upload/Cambodia-Water-1.jpg" afterDir="false" />
@@ -22,13 +23,15 @@
       <change afterPath="$PROJECT_DIR$/backend/media/upload/fanta.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/product/migrations/0012_remove_productprice_product_price_and_more.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/frontend/blog/frontend_post_blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/templates/frontend/blog/frontend_post_views.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/customer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/product/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product/forms.py" afterDir="false" />
@@ -36,7 +39,9 @@
       <change beforePath="$PROJECT_DIR$/backend/product/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/blog/index_blog_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/blog/index_blog_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/company/about_us/index_about.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/company/about_us/index_about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/product/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/product/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/frontend/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/frontend/products/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/frontend/products/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/layouts/backend.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/layouts/backend.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/layouts/frontend.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/layouts/frontend.html" afterDir="false" />
@@ -212,7 +217,7 @@
       <workItem from="1666366602613" duration="150000" />
       <workItem from="1666366763562" duration="751000" />
       <workItem from="1666367526967" duration="5418000" />
-      <workItem from="1666426237815" duration="30201000" />
+      <workItem from="1666426237815" duration="42753000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1666368137757</created>

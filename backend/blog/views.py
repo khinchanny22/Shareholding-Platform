@@ -50,14 +50,42 @@ def UpdateBlogPost(request, id):
     return render(request, 'backend/blog/update_blog_post.html', content)
 
 
-# blog frontend
+# blog Post frontend side
 def IndexBlogFrontend(request):
     post_blog_frontend = PostBlog.objects.order_by('-id')
-    paginator = Paginator(post_blog_frontend, 10)
+    paginator = Paginator(post_blog_frontend, 5)
     page_num = request.GET.get('page')
     page = paginator.get_page(page_num)
     content = {
         'post_blog_frontend': post_blog_frontend,
+        'page': page,
+    }
+    return render(request, 'frontend/blog/frontend_post_blog.html', content)
+
+
+# RecentPostProduct
+def RecentPostProduct(request):
+    recent = PostBlog.objects.order_by('-id')
+    paginator = Paginator(recent, 5)
+    page_num = request.GET.get('page')
+    page = paginator.get_page(page_num)
+    content = {
+        'recent': recent,
+        'page': page,
+    }
+    return render(request, 'frontend/blog/frontend_post_blog.html', content)
+
+
+# PopularPostProduct
+def PopularPostProduct(request):
+    popular = PostBlog.objects.all()
+    return HttpResponse(popular)
+    exit()
+    paginator = Paginator(popular, 5)
+    page_num = request.GET.get('page')
+    page = paginator.get_page(page_num)
+    content = {
+        'popular': popular,
         'page': page,
     }
     return render(request, 'frontend/blog/frontend_post_blog.html', content)

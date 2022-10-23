@@ -31,11 +31,11 @@
                             <tr>
                                 <td>{{ data.id }}</td>
                                 <td>{{ data.company }}</td>
-                                <td>{{ data.company_info }}</td>
+                                <td>{{ data.company_info|truncatechars:50 }}</td>
                                 <td>{{ data.mission }}</td>
-                                <td>{{ data.mission_description }}</td>
+                                <td>{{ data.mission_description|truncatechars:50 }}</td>
                                 <td>{{ data.vision }}</td>
-                                <td>{{ data.vision_description }}</td>
+                                <td>{{ data.vision_description|truncatechars:50 }}</td>
                                 <td>
                                     <a href="#" class="btn btn-sm btn-primary">View</a>
                                     <a href="#" class="btn btn-sm btn-success">Update</a>

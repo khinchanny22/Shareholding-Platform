@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-header">
                     <div class="col"><h4>Lists Post Blog </h4></div>
-                    <div class="col"><h4 class="text-end text-blue"><a href="{% url 'AddPostBlog' %}">Add Post Blog</a>
+                    <div class="col"><h4 class="text-end text-blue"><a class="text-blue" href="{% url 'AddPostBlog' %}">Add Post Blog</a>
                     </h4>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                         {% for basic_employee in page.object_list %}
                             <tr>
                                 <th scope="row">{{ basic_employee.id }}</th>
-                                <th scope="row">{{ basic_employee.content_title }}</th>
+                                <th scope="row">{{ basic_employee.content_title|truncatechars:20 }}</th>
                                {% if basic_employee.image %}
                                         <td width="10%">
                                             <img src="{{ basic_employee.image.url }}" alt=""
@@ -48,7 +48,7 @@
                                     {% endif %}
                                 <td>{{ basic_employee.date }}</td>
                                 <td>{{ basic_employee.author }}</td>
-                                <td>{{ basic_employee.content }}</td>
+                                <td>{{ basic_employee.content|truncatechars:30 }}</td>
                                 <td>
                                     <a href="{% url 'UpdateBlogPost' basic_employee.id %}"
                                        class="btn btn-sm btn-primary">Update</a>

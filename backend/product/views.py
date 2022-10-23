@@ -60,11 +60,15 @@ def UpdateProducePrice(request, id):
 
 
 def AddProduct(request):
-    if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
+    if request.method == "POST":
+        form = ProductForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('ProductIndex')
+            try:
+                form.save()
+                model = form.instance
+                return redirect('ProductIndex')
+            except:
+                pass
     else:
         form = ProductForm()
     return render(request, 'backend/product/create.html', {'form': form})

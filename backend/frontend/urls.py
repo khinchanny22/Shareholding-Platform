@@ -8,4 +8,6 @@ urlpatterns = [
     path('Product_Details', views.ProductDetails, name='ProductDetails'),
     path('Shopping_Cart', views.ShoppingCart, name='ShoppingCart'),
     path('Layout_Product', views.LayoutProduct, name='LayoutProduct'),
+
+
 ]

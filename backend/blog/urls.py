@@ -13,4 +13,9 @@ urlpatterns = [
     # url blog frontend
     path('index_blog_frontend', views.IndexBlogFrontend, name='IndexBlogFrontend'),
 
+    # RecentPostProduct
+    path('recent_post_frontend', views.RecentPostProduct, name='RecentPostProduct'),
+    # PopularPostProduct
+    path('popolar_post_frontend', views.PopularPostProduct, name='PopularPostProduct'),
+
 ]

@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-
 # Create your views here.
 from product.models import Product
 
@@ -20,9 +19,9 @@ def FrontendProducts(request):
     page = paginator.get_page(page_num)
     content = {
         'product': product,
-        'page':page,
+        'page': page,
     }
-    return render(request,'frontend/products/index.html',content)
+    return render(request, 'frontend/products/index.html', content)
 
 
 def ProductDetails(request):
@@ -38,3 +37,6 @@ def ShoppingCart(request):
 def LayoutProduct(request):
     return render(request,
                   'frontend/Wishlist/index.html')
+
+
+
