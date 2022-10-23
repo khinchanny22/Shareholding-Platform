@@ -1,0 +1,53 @@
+{% extends 'layouts/backend.html' %}
+{% block content %}
+{% load django_bootstrap5 %}
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <div class="col"><h3>Customers Listing</h3></div>
+                    <div class="col"><h3 class="text-end"><a href="{% url 'AddAboutUs' %}">Add About Us</a></h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Company</th>
+                                <th>Company Info</th>
+                                <th>Mission</th>
+                                <th>Mission Description</th>
+                                <th>Vision</th>
+                                <th>Vision Description</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for data in page.object_list %}
+                            <tr>
+                                <td>{{ data.id }}</td>
+                                <td>{{ data.company }}</td>
+                                <td>{{ data.company_info }}</td>
+                                <td>{{ data.mission }}</td>
+                                <td>{{ data.mission_description }}</td>
+                                <td>{{ data.vision }}</td>
+                                <td>{{ data.vision_description }}</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-primary">View</a>
+                                    <a href="#" class="btn btn-sm btn-success">Update</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

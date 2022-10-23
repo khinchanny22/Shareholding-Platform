@@ -1,0 +1,128 @@
+{% extends 'layouts/products.html' %}
+{% load static %}
+{% block content %}
+    <div class="page-content">
+        <!-- INNER PAGE BANNER -->
+        <div class="wt-bnr-inr overlay-wraper"
+             style="background-image:url({% static 'frontend/images/banner/product-banner.jpg' %});">
+            <div class="overlay-main bg-black opacity-07"></div>
+            <div class="container">
+                <div class="wt-bnr-inr-entry">
+                    <h1 class="text-white">News</h1>
+                </div>
+            </div>
+        </div>
+        <!-- INNER PAGE BANNER END -->
+        <!-- BREADCRUMB ROW -->
+        <div class="bg-gray-light p-tb20">
+            <div class="container">
+                <ul class="wt-breadcrumb breadcrumb-style-2">
+                    <li><a href="javascript:void(0);"><i class="fa fa-home"></i> Company</a></li>
+                    <li>News</li>
+                </ul>
+            </div>
+        </div>
+        <!-- BREADCRUMB ROW END -->
+        <div class="section-full p-t80 p-b50">
+            <div class="container">
+                <div class="row">
+                    <!-- BLOG GRID START -->
+
+                    <div class="portfolio-wrap wt-blog-grid-3">
+                        {% for data in page.object_list %}
+                            <!-- COLUMNS 1 -->
+                            <div class="post masonry-item col-lg-4 col-md-6 col-sm-6 col-xs-12 thumbnail">
+
+                                <div class="blog-post blog-grid date-style-1">
+                                    <div class="wt-post-media wt-img-effect zoom-slow">
+                                        {% if data.image %}
+                                            <img src="{{ data.image.url }}" alt="">
+                                        {% else %}
+                                            <a href="javascript:void(0);"><img
+                                                    src="{% static 'frontend/images/blog/grid/pic1.jpg' %}" alt=""></a>
+                                        {% endif %}
+
+                                    </div>
+                                    <div class="wt-post-info p-tb30 p-m30">
+                                        <div class="wt-post-title ">
+                                            <h3 class="post-title"><a href="javascript:void(0);">{{ data.content_title }}</a>
+                                            </h3>
+                                        </div>
+                                        <div class="wt-post-meta ">
+                                            <ul>
+                                                <li class="post-date"><i class="fa fa-calendar"></i><strong>{{ data.date }}</li>
+                                                <li class="post-author"><i class="fa fa-user"></i><a
+                                                        href="javascript:void(0);">By <span>{{ data.author }}</span></a></li>
+                                                <li class="post-comment"><i class="fa fa-comments"></i> <a
+                                                        href="javascript:void(0);">0 Comments</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="wt-post-text">
+                                            <p>{{ data.content }}</p>
+                                        </div>
+                                        <div class="clearfix">
+                                            <div class="wt-post-readmore pull-left">
+                                                <a href="javascript:void(0);" title="READ MORE" rel="bookmark"
+                                                   class="site-button-link">Read More</a>
+                                            </div>
+                                            <div class="widget_social_inks pull-right">
+                                                <ul class="social-icons social-radius social-dark m-b0">
+                                                    <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
+                                                    <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
+                                                    <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
+                                                    <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
+                                                    <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %} </div>
+                </div>
+                <div class="row">
+                    <div class="card-body">
+                        <!--Pagination-->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                {% if page.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page.previous_page_number }}">Previous</a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+                                    </li>
+                                {% endif %}
+                                {% for i in page.paginator.page_range %}
+                                    {% if page.number == i %}
+                                        <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                {{ i }}
+                <span class="sr-only">(Current)</span>
+              </span>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if page.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page.next_page_number }}">Next</a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        <!--end of Pagination-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

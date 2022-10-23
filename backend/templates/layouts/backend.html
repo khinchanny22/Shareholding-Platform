@@ -932,7 +932,7 @@
                 {#                    </li>#}
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                    <span class="nav-text">Seller</span>
+                    <span class="nav-text">Seller Management</span>
                 </a>
                     <ul aria-expanded="false">
                         <li><a href="#">Promote Shares</a></li>
@@ -942,11 +942,11 @@
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="fa fa-credit-card" aria-hidden="true"></i>
-                    <span class="nav-text">Buyer</span>
+                    <span class="nav-text">Buyer Management</span>
                 </a>
                     <ul aria-expanded="false">
                         <li><a href="#">Look for Shares</a></li>
-                        <li><a href="{% url 'ProductIndex' %}">Buyer Shares</a></li>
+                        <li><a href="{% url 'ProductIndex' %}">Add Products</a></li>
                         <li><a href="#">List Invoice Buyer</a></li>
                     </ul>
                 </li>
@@ -971,6 +971,17 @@
                         <li><a href="{% url 'User' %}">Users Management</a></li>
                         <li><a href="#">User Permission</a></li>
                         <li><a href="#">User Role</a></li>
+                    </ul>
+                </li>
+                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span class="nav-text">Company</span>
+                </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{% url 'IndexAboutUs' %}">About Us</a></li>
+                        <li><a href="{% url 'Contacts' %}">Contact Us</a></li>
+                        <li><a href="{% url 'IndexBlogFrontend' %}">News</a></li>
+                        <li><a href="#">Support</a></li>
                     </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

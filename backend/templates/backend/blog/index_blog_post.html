@@ -1,0 +1,105 @@
+{% extends 'layouts/backend.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-body">
+    <div class="container-fluid">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="card">
+            <div class="card-header">
+                    <div class="col"><h4>Lists Post Blog </h4></div>
+                    <div class="col"><h4 class="text-end text-blue"><a href="{% url 'AddPostBlog' %}">Add Post Blog</a>
+                    </h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col" width="10%">Image</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Content</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for basic_employee in page.object_list %}
+                            <tr>
+                                <th scope="row">{{ basic_employee.id }}</th>
+                                <th scope="row">{{ basic_employee.content_title }}</th>
+                               {% if basic_employee.image %}
+                                        <td width="10%">
+                                            <img src="{{ basic_employee.image.url }}" alt=""
+                                                 class="prod-size img-thumbnail" height="100%" width="100%">
+                                        </td>
+                                    {% else %}
+                                        <td>
+                                            <img src="{% static 'images/product.png' %}" alt="" class="prod-size">
+                                        </td>
+                                    {% endif %}
+                                <td>{{ basic_employee.date }}</td>
+                                <td>{{ basic_employee.author }}</td>
+                                <td>{{ basic_employee.content }}</td>
+                                <td>
+                                    <a href="{% url 'UpdateBlogPost' basic_employee.id %}"
+                                       class="btn btn-sm btn-primary">Update</a>
+                                    <a href=""
+                                       class="btn btn-sm btn-success">View</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-body">
+                <!--Pagination-->
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        {% if page.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page.previous_page_number }}">Previous</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+                            </li>
+                        {% endif %}
+                        {% for i in page.paginator.page_range %}
+                            {% if page.number == i %}
+                                <li class="page-item active" aria-current="page">
+                      <span class="page-link">
+                        {{ i }}
+                        <span class="sr-only">(Current)</span>
+                      </span>
+                                </li>
+                            {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page.next_page_number }}">Next</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                <!--end of Pagination-->
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

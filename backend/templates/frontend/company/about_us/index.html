@@ -23,7 +23,7 @@
             </div>
             <!-- BREADCRUMB ROW END -->
     <div class="container">
-        {% for companies in company %}
+        {% for companies in page.object_list %}
             <h2>{{ companies.company }}</h2>
             <p class="text-justify">{{ companies.company_info }}</p>
 

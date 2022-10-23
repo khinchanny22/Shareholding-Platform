@@ -1,51 +1,97 @@
 {% extends 'layouts/backend.html' %}
 {% load static %}
 {% block content %}
-<div class="content-body">
-    <!-- row -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="card">
-                <div class="card-header">
-                    <div class="col"><h3>List Share</h3></div>
-                    <div class="col"><h3 class="text-end"><a class="text-blue" href="{% url 'AddProduct' %}">Add Product</a></h3></div>
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col"><h3>List Share</h3></div>
+                        <div class="col"><h3 class="text-end"><a class="text-blue" href="{% url 'AddProduct' %}">Add
+                            Product</a></h3></div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                                <th>Share</th>
+                                <th>Image</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for products in page.object_list %}
+                                <tr>
+                                    <td>{{ products.id }}</td>
+                                    <td>{{ products.product_name }}</td>
+                                    <td>$ {{ products.product_price }}</td>
+                                    <td>{{ products.product_description }}</td>
+                                    <td>{{ products.product_quantity }}</td>
+                                    {% if products.product_image %}
+                                        <td width="10%">
+                                            <img src="{{ products.product_image.url }}" alt=""
+                                                 class="prod-size img-thumbnail" height="100%" width="100%">
+                                        </td>
+                                    {% else %}
+                                        <td>
+                                            <img src="{% static 'images/product.png' %}" alt="" class="prod-size">
+                                        </td>
+                                    {% endif %}
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-primary">View</a>
+                                        <a href="{% url 'SellersIndex' %}"
+                                           class="btn btn-sm btn-outline-success">Seller</a>
+                                        <a href="{% url 'UpdateProduct' products.id %}" class="btn btn-sm btn-success">Update</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Item</th>
-                            <th>Description</th>
-                            <th>Share</th>
-                            <th>Image</th>
-                            <th>Created</th>
-                            <th>Updated</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for products in product %}
-                        <tr>
-                            <td>{{ products.id}}</td>
-                            <td>{{ products.product_name}}</td>
-                            <td>{{ products.product_description }}</td>
-                            <td>{{ products.product_quantity }}</td>
-                            <td><img src="{{ products.product_image}}" alt=""> </td>
-                            <td>{{ products.created_at }}</td>
-                            <td>{{ products.updated_at }}</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-primary">View</a>
-                                <a href="{% url 'SellersIndex' %}" class="btn btn-sm btn-outline-success">Seller</a>
-                                <a href="{% url 'UpdateProduct' products.id %}" class="btn btn-sm btn-success">Update</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
+                    <!--Pagination-->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            {% if page.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page.previous_page_number }}">Previous</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+                                </li>
+                            {% endif %}
+                            {% for i in page.paginator.page_range %}
+                                {% if page.number == i %}
+                                    <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                {{ i }}
+                <span class="sr-only">(Current)</span>
+              </span>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if page.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page.next_page_number }}">Next</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    <!--end of Pagination-->
                 </div>
             </div>
         </div>
-    </div>
-</div>
 {% endblock %}

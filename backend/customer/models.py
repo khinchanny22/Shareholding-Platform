@@ -12,6 +12,7 @@ class Customer(models.Model):
         ("SELECT", "SELECT"),
         ("Seller", "Seller"),
         ("Buyer", "Buyer"),
+        ("Mandate", "Mandate"),
     )
     customer_status = models.CharField(max_length=20,
                                choices=customer_status,

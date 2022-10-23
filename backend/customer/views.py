@@ -4,14 +4,15 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CustomerForm
 from .models import Customer
 
-
 # Create your views here.
+
+
 
 def Customers(request):
     data = Customer.objects.order_by('-id')
 
     content = {
-        'data' : data,
+        'data': data,
     }
     return render(request, 'backend/customers/index.html', content)
 
@@ -43,3 +44,8 @@ def UpdateCustomer(request, id):
 
     context["form"] = form
     return render(request, 'backend/customers/update.html', context)
+
+
+
+
+

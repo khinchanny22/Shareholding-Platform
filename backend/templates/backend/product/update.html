@@ -1,27 +1,27 @@
 {% extends 'layouts/backend.html' %}
 {% block content %}
-<div class="content-body">
-    <!-- row -->
-    <div class="container-fluid">
-        <div class="card">
-            <div class="card-header"><h3>Update Product</h3></div>
-            <div class="card-body">{% load crispy_forms_tags %}
-                <form action="" method="post">
-                    {% csrf_token %}
-                    <div class="row">
-                       <div class="col">{{ form.product_name|as_crispy_field }}</div>
-                       <div class="col">{{ form.product_description|as_crispy_field }}</div>
-                    </div>
-                    <div class="row">
-                       <div class="col">{{ form.product_quantity|as_crispy_field }}</div>
-                       <div class="col">{{ form.product_image|as_crispy_field }}</div>
-                    </div>
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header"><h3>Update Product</h3></div>
+                <div class="card-body">{% load crispy_forms_tags %}
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col">{{ form.product_name|as_crispy_field }}</div>
+                            <div class="col">{{ form.product_description|as_crispy_field }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col">{{ form.product_quantity|as_crispy_field }}</div>
+                            <div class="col">{{ form.product_image|as_crispy_field }}</div>
+                        </div>
 
-                    <br>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </form>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

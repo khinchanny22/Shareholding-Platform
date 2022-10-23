@@ -1,0 +1,49 @@
+{% extends 'layouts/backend.html' %}
+{% block content %}
+{% load django_bootstrap5 %}
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <div class="col"><h3>Customers Listing</h3></div>
+                    <div class="col"><h3 class="text-end"><a href="#">Add About Us</a></h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Company</th>
+                                <th>Company Info</th>
+                                <th>Mission</th>
+                                <th>Mission Description</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for data in page.object_list %}
+                            <tr>
+                                <td>{{ data.id }}</td>
+                                <td>{{ data.username }}</td>
+                                <td>{{ data.email }}</td>
+                                <td>{{ data.subject }}</td>
+                                <td>{{ data.message }}</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-primary">View</a>
+                                    <a href="#" class="btn btn-sm btn-success">Update</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,17 +1,23 @@
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
 from .forms import ProductForm, ProductPriceForm
-from .functions import handle_uploaded_file
+# from .functions import handle_uploaded_file
 from .models import *
 
 
 def ProductIndex(request):
     product = Product.objects.order_by('-id')
+    paginator = Paginator(product, 10)
+    page_num = request.GET.get('page')
+    page = paginator.get_page(page_num)
+
     content = {
         'product': product,
+        'page': page,
     }
     return render(request, 'backend/product/index.html', content)
 
@@ -66,7 +72,6 @@ def AddProduct(request):
 
 def UpdateProduct(request, id):
     context = {}
-
     obj = get_object_or_404(Product, id=id)
 
     form = ProductForm(request.POST or None, instance=obj)

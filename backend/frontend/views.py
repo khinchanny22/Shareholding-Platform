@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
@@ -14,13 +15,14 @@ def frontend(request):
 
 def FrontendProducts(request):
     product = Product.objects.order_by('-id')
-
+    paginator = Paginator(product, 12)
+    page_num = request.GET.get('page')
+    page = paginator.get_page(page_num)
     content = {
         'product': product,
+        'page':page,
     }
-    return render(request,
-                  'frontend/products/index.html',
-                  content)
+    return render(request,'frontend/products/index.html',content)
 
 
 def ProductDetails(request):
