@@ -946,7 +946,7 @@
                 </a>
                     <ul aria-expanded="false">
                         <li><a href="#">Look for Shares</a></li>
-                        <li><a href="{% url 'ProductIndex' %}">Add Products</a></li>
+                        <li><a href="{% url 'IndexProductBackend' %}">Product | Share</a></li>
                         <li><a href="#">List Invoice Buyer</a></li>
                     </ul>
                 </li>
@@ -979,7 +979,7 @@
                 </a>
                     <ul aria-expanded="false">
                         <li><a href="{% url 'IndexAboutUs' %}">About Us</a></li>
-                        <li><a href="{% url 'Contacts' %}">Contact Us</a></li>
+                        <li><a href="{% url 'IndexContactBackend' %}">Contact Us</a></li>
                         <li><a href="{% url 'IndexPostBlog' %}">News</a></li>
                         <li><a href="#">Support</a></li>
                     </ul>
@@ -1052,12 +1052,19 @@
     <!--**********************************
         Footer start
     ***********************************-->
-    <div class="footer">
+{#    <div class="footer">#}
+{##}
+{#        <div class="copyright">#}
+{#            <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">KHIN CHANNY</a> | 2022</p>#}
+{#        </div>#}
+{#    </div>#}
 
-        <div class="copyright">
-            <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">KHIN CHANNY</a> 2022</p>
-        </div>
-    </div>
+<!-- Copyright -->
+  <div class="text-center p-4">
+    © 2022 Designed & Developed by:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">KHIN CHANNY</a> | 2022</a>
+  </div>
+  <!-- Copyright -->
     <!--**********************************
         Footer end
     ***********************************-->

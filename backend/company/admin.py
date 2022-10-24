@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import AboutUs, ContactUs, Address
+from .models import AboutUs, ContactUs, Address, ContactUsFrontend
 
 
 class AboutUsAdmin(admin.ModelAdmin):
@@ -14,6 +14,8 @@ admin.site.register(AboutUs, AboutUsAdmin)
 # contact us
 class ContactUsAdmin(admin.ModelAdmin):
     list_display = ['username', 'email', 'subject', 'message']
+    search_fields = ['username', 'email', 'subject', 'message']
+    list_filter = ['username', 'email']
 
 
 admin.site.register(ContactUs, ContactUsAdmin)
@@ -25,3 +27,4 @@ class AddressAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Address, AddressAdmin)
+admin.site.register(ContactUsFrontend)

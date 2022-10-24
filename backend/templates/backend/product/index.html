@@ -6,92 +6,100 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="card">
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                     <div class="card-header">
-                        <div class="col"><h3>List Share</h3></div>
-                        <div class="col"><h3 class="text-end"><a class="text-blue" href="{% url 'AddProduct' %}">Add
-                            Product</a></h3></div>
+                        <div class="col"><h3>List Products | Share</h3></div>
+                        <div class="col"><h3 class="text-end"><a class="text-blue" href="{% url 'AddProductBackend' %}">Add
+                            Product | Share </a></h3></div>
                     </div>
                     <div class="card-body">
                         <table class="table">
                             <thead>
-                            <tr>
+                            <tr class="text-center text-blue">
                                 <th>No</th>
                                 <th>Item</th>
                                 <th>Price</th>
                                 <th>Description</th>
-                                <th>Share</th>
+                                <th>Share | Quantity</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for products in page.object_list %}
-                                <tr>
+                                <tr class="text-center">
                                     <td>{{ products.id }}</td>
-                                    <td>{{ products.product_name }}</td>
-                                    <td>$ {{ products.product_price }}</td>
-                                    <td>{{ products.product_description }}</td>
-                                    <td>{{ products.product_quantity }}</td>
-                                    {% if products.product_image %}
-                                        <td width="10%">
-                                            <img src="{{ products.product_image.url }}" alt=""
-                                                 class="prod-size img-thumbnail" height="100%" width="100%">
-                                        </td>
-                                    {% else %}
-                                        <td>
-                                            <img src="{% static 'images/product.png' %}" alt="" class="prod-size">
-                                        </td>
-                                    {% endif %}
+                                    <td>{{ products.product_name|truncatechars:50 }}</td>
+                                    <td class="text-center text-black font-weight-bold">
+                                        $ {{ products.product_price }}</td>
+                                    <td>{{ products.product_description|truncatechars:20 }}</td>
+                                    <td class="text-center text-black">{{ products.product_quantity }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-primary">View</a>
+                                        {% if products.product_image %}
+                                            <img class="thumbnail clearfix" src="{{ products.product_image.url }}"
+                                                 width="50px" height="50px" alt="">
+                                        {% else %}
+                                            <img src="{% static 'image.png' %}" alt="">
+                                        {% endif %}
+
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'ViewProductBackend' products.id %}" class="btn btn-sm btn-primary">View</a>
                                         <a href="{% url 'SellersIndex' %}"
                                            class="btn btn-sm btn-outline-success">Seller</a>
-                                        <a href="{% url 'UpdateProduct' products.id %}" class="btn btn-sm btn-success">Update</a>
+                                        <a href="{% url 'UpdateProductBackend' products.id %}"
+                                           class="btn btn-sm btn-success">Update</a>
                                     </td>
                                 </tr>
                             {% endfor %}
                             </tbody>
                         </table>
                     </div>
-                </div>
-                <div class="card-body">
-                    <!--Pagination-->
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            {% if page.has_previous %}
-                                <li class="page-item">
-                                    <a class="page-link" href="?page={{ page.previous_page_number }}">Previous</a>
-                                </li>
-                            {% else %}
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
-                                </li>
-                            {% endif %}
-                            {% for i in page.paginator.page_range %}
-                                {% if page.number == i %}
-                                    <li class="page-item active" aria-current="page">
+
+                    <div class="card-body">
+                        <!--Pagination-->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                {% if page.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page.previous_page_number }}">Previous</a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+                                    </li>
+                                {% endif %}
+                                {% for i in page.paginator.page_range %}
+                                    {% if page.number == i %}
+                                        <li class="page-item active" aria-current="page">
               <span class="page-link">
                 {{ i }}
                 <span class="sr-only">(Current)</span>
               </span>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if page.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page.next_page_number }}">Next</a>
                                     </li>
                                 {% else %}
-                                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+                                    </li>
                                 {% endif %}
-                            {% endfor %}
-                            {% if page.has_next %}
-                                <li class="page-item">
-                                    <a class="page-link" href="?page={{ page.next_page_number }}">Next</a>
-                                </li>
-                            {% else %}
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
-                                </li>
-                            {% endif %}
-                        </ul>
-                    </nav>
-                    <!--end of Pagination-->
+                            </ul>
+                        </nav>
+                        <!--end of Pagination-->
+                    </div>
                 </div>
             </div>
-        </div>
 {% endblock %}

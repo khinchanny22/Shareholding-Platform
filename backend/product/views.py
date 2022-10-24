@@ -1,6 +1,9 @@
+import os
+from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
@@ -9,12 +12,13 @@ from .forms import ProductForm, ProductPriceForm
 from .models import *
 
 
-def ProductIndex(request):
+# start product backend
+# function product index backend
+def IndexProductBackend(request):
     product = Product.objects.order_by('-id')
     paginator = Paginator(product, 10)
     page_num = request.GET.get('page')
     page = paginator.get_page(page_num)
-
     content = {
         'product': product,
         'page': page,
@@ -22,14 +26,53 @@ def ProductIndex(request):
     return render(request, 'backend/product/index.html', content)
 
 
+# add product backend
+def AddProductBackend(request):
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Add Product successful!')
+        return redirect('IndexProductBackend')
+    form = ProductForm()
+    product = Product.objects.all()
+    return render(request, 'backend/product/create.html', {'form': form, 'product': product})
+
+
+# Update Product Backend
+def UpdateProductBackend(request, id):
+    # dictionary for initial data with
+    # field names as keys
+    context = {}
+    # fetch the object related to passed id
+    obj = get_object_or_404(Product, id=id)
+    # pass the object as instance in form
+    form = ProductForm(request.POST or None, instance=obj)
+    # save the data from the form and
+    # redirect to detail_view
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Update Product successful!')
+        return redirect("IndexProductBackend")
+    # add form dictionary to context
+    context["form"] = form
+    return render(request, 'backend/product/update.html', {'form': form})
+
+
+# view Product Backend
+def ViewProductBackend(request, id):
+    data = get_object_or_404(Product, id=id)
+    return render(request, 'backend/product/view.html', {'data':data})
+
+
+# start Product Cost Backend
 def ProductCost(request):
     product = ProductPrice.objects.order_by('-id')
-    data = {
-        'product': product,
-    }
+    data = {'product': product, }
     return render(request, 'backend/product_price/index.html', data)
 
 
+# AddProductPrice
 def AddProductPrice(request):
     if request.method == "POST":
         form = ProductPriceForm(request.POST)
@@ -45,46 +88,13 @@ def AddProductPrice(request):
     return render(request, 'backend/product_price/create.html', {'form': form})
 
 
+# UpdateProducePrice
 def UpdateProducePrice(request, id):
     context = {}
-
     obj = get_object_or_404(ProductPrice, id=id)
-
     form = ProductPriceForm(request.POST or None, instance=obj)
     if form.is_valid():
         form.save()
         return redirect('ProductCost')
-
     context["form"] = form
     return render(request, 'backend/product_price/update.html', context)
-
-
-def AddProduct(request):
-    if request.method == "POST":
-        form = ProductForm(request.POST)
-        if form.is_valid():
-            try:
-                form.save()
-                model = form.instance
-                return redirect('ProductIndex')
-            except:
-                pass
-    else:
-        form = ProductForm()
-    return render(request, 'backend/product/create.html', {'form': form})
-
-
-def UpdateProduct(request, id):
-    context = {}
-    obj = get_object_or_404(Product, id=id)
-
-    form = ProductForm(request.POST or None, instance=obj)
-    if form.is_valid():
-        form.save()
-        return redirect('ProductIndex')
-
-    context["form"] = form
-    return render(request, 'backend/product/update.html', context)
-
-
-

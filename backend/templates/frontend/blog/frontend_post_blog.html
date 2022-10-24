@@ -246,7 +246,7 @@
                                 <div class="wt-post-info thumbnail">
 
                                     <div class="wt-post-title ">
-                                        <h3 class="post-title"><a href="javascript:void(0);">
+                                        <h3 class="post-title"><a href="{% url 'ViewsBlogFrontend' data.id %}">
                                             {{ data.content_title|truncatechars:50 }}</a></h3>
                                     </div>
                                     <div class="wt-post-meta ">
@@ -264,7 +264,7 @@
                                     </div>
                                     <div class="clearfix">
                                         <div class="wt-post-readmore pull-left">
-                                            <a href="javascript:void(0);" title="READ MORE" rel="bookmark"
+                                            <a href="{% url 'ViewsBlogFrontend' data.id %}" title="READ MORE" rel="bookmark"
                                                class="site-button-link">Read More</a>
                                         </div>
                                         <div class="widget_social_inks pull-right">

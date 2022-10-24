@@ -1,10 +1,10 @@
 from django.contrib import messages
 from django.core.paginator import Paginator
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 
 # Create your views here.
-from .forms import BlogForm
+from .forms import BlogForm, BlogCommentForm
 from .models import PostBlog
 
 
@@ -50,6 +50,13 @@ def UpdateBlogPost(request, id):
     return render(request, 'backend/blog/update_blog_post.html', content)
 
 
+# function Views or Details block Backend
+def ViewPostblogBackend(request, id):
+    data = get_object_or_404(PostBlog, id=id)
+    return render(request, 'backend/blog/view_post_blog_backend.html', {'data':data})
+
+
+# starting function
 # blog Post frontend side
 def IndexBlogFrontend(request):
     post_blog_frontend = PostBlog.objects.order_by('-id')
@@ -61,6 +68,36 @@ def IndexBlogFrontend(request):
         'page': page,
     }
     return render(request, 'frontend/blog/frontend_post_blog.html', content)
+
+
+# ViewsBlogFrontend
+def ViewsBlogFrontend(request, id):
+    data = get_object_or_404(PostBlog, id=id)
+    # recent
+    recent = PostBlog.objects.order_by('-id')
+    # popular
+    popular = PostBlog.objects.filter()
+    # add comment blog frontend
+    if request.method == 'POST':
+        form = BlogCommentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Add Comment Successful!')
+            return redirect('ViewsBlogFrontend')
+    else:
+        form = BlogCommentForm()
+    # end comment blog frontend
+    paginator = Paginator(recent, 5)
+    page_num = request.GET.get('page')
+    page = paginator.get_page(page_num)
+    context = {
+        "data": data,
+        "recent": recent,
+        "page": page,
+        "popular": popular,
+        "form": form
+    }
+    return render(request, 'frontend/blog/frontend_post_views.html', context)
 
 
 # RecentPostProduct
@@ -79,8 +116,6 @@ def RecentPostProduct(request):
 # PopularPostProduct
 def PopularPostProduct(request):
     popular = PostBlog.objects.all()
-    return HttpResponse(popular)
-    exit()
     paginator = Paginator(popular, 5)
     page_num = request.GET.get('page')
     page = paginator.get_page(page_num)

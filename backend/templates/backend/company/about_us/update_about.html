@@ -1,0 +1,27 @@
+{% extends 'layouts/backend.html' %}
+{% block content %}
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header"><h4>Update Company Profile</h4></div>
+            <div class="card-body">{% load crispy_forms_tags %}
+                <form action="" method="post" class="text-blue">
+                    {% csrf_token %}
+                       <div class="col">{{ update_about.company|as_crispy_field }}</div>
+                       <div class="col">{{ update_about.company_info|as_crispy_field }}</div>
+
+                       <div class="col">{{ update_about.mission|as_crispy_field }}</div>
+                       <div class="col">{{ update_about.mission_description|as_crispy_field }}</div>
+
+                       <div class="col">{{ update_about.vision|as_crispy_field }}</div>
+                       <div class="col">{{ update_about.vision_description|as_crispy_field }}</div>
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Save Info</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'layouts/backend.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header"><h2>View or Detail Post Blog</h2></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6 col-md-4 clearfix">
+                            {% if data.image %}
+                                <img src="{{ data.image.url }}" class="clearfix img-thumbnail img-responsive" alt="">
+                            {% else %}
+                                <img src="{% url 'image.png' %}" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <h3>{{ data.content_title }}</h3>
+                            <i class="bi bi-calendar-minus-fill"></i>
+                            <strong>{{ data.date }}</strong>&nbsp;&nbsp;
+                            <i class="bi bi-person-square"></i>
+                            <strong>{{ data.author }}</strong>
+                            <p class="text-justify">{{ data.content }}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

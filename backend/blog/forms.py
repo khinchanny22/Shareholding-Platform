@@ -13,3 +13,9 @@ class BlogForm(forms.ModelForm):
     class Meta:
         model = PostBlog
         fields = "__all__"
+
+
+class BlogCommentForm(forms.ModelForm):
+    class Meta:
+        model = BlogComment
+        fields = "__all__"

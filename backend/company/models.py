@@ -21,7 +21,18 @@ class ContactUs(models.Model):
     message = models.TextField()
 
     def __str__(self):
-        return self.username
+        return self.subject
+
+
+class ContactUsFrontend(models.Model):
+    username = models.CharField(max_length=250)
+    phone = models.CharField(max_length=15)
+    email = models.EmailField()
+    subject = models.CharField(max_length=250)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.subject
 
 
 class Address(models.Model):

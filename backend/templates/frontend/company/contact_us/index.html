@@ -68,6 +68,7 @@
                         <form action="" method="post">
                             {% csrf_token %}
                             {{ form.username|as_crispy_field }}
+                            {{ form.phone|as_crispy_field }}
                             {{ form.email|as_crispy_field }}
                             {{ form.subject|as_crispy_field }}
                             {{ form.message|as_crispy_field }}

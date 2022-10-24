@@ -1,11 +1,16 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 
 from . import views
 
 urlpatterns = [
-    path('', views.ProductIndex, name='ProductIndex'),
-    path('add_product', views.AddProduct, name='AddProduct'),
-    path('updated_product/<int:id>', views.UpdateProduct, name='UpdateProduct'),
+    # url product backend
+    path('', views.IndexProductBackend, name='IndexProductBackend'),
+    path('add_product_backend', views.AddProductBackend, name='AddProductBackend'),
+    path('updated_product_backend/<int:id>', views.UpdateProductBackend, name='UpdateProductBackend'),
+    path('view_product_backend/<int:id>', views.ViewProductBackend, name='ViewProductBackend'),
+
     # product price
     path('product_price', views.ProductCost, name='ProductCost'),
     path('add_product_price', views.AddProductPrice, name='AddProductPrice'),

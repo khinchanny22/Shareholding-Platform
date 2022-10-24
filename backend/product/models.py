@@ -8,11 +8,11 @@ from django.utils.safestring import mark_safe # new
 
 
 class Product(models.Model):
-    product_name = models.CharField(max_length=50)
+    product_name = models.CharField(max_length=250)
     product_price = models.IntegerField()
-    product_description = models.CharField(max_length=100)
+    product_description = models.TextField(max_length=1000)
     product_quantity = models.IntegerField()
-    product_image = models.ImageField(upload_to='upload/')
+    product_image = models.ImageField(upload_to='product/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -30,7 +30,6 @@ class ProductPrice(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.product_price)
+        return str(self.product_name)
 
-    def product_price(self):
-        return self.product_price
+

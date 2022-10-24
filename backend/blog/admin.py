@@ -9,3 +9,12 @@ class PostBlogAdmin(admin.ModelAdmin):
 
 
 admin.site.register(PostBlog, PostBlogAdmin)
+
+
+class BlogCommentAdmin(admin.ModelAdmin):
+    list_display = ['author', 'email', 'website', 'comment']
+    search_fields = ['author', 'email']
+    list_filter = ['author', 'email']
+
+
+admin.site.register(BlogComment, BlogCommentAdmin)
