@@ -6,13 +6,45 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="card">
-                    {% if messages %}
-                        <ul class="messages">
-                            {% for message in messages %}
-                                <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
+                    {% for message in messages %}
+                        {% if message.tags == 'success' %}
+                            <!-- sweetalert js -->
+                            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                                var m = "{{ message }}";
+                                Swal.fire({
+                                    icon: 'success',
+                                    iconHtml: '<i class="fa fa-check"></i>',
+                                    text: m,
+                                    confirmButtonColor: 'red',
+                                    color: '#000',
+                                    background: 'gray',
+                                    allowEscapeKey: false,
+                                    showClass: {
+                                        popup: 'my-icon'                     // disable popup animation css
+                                    },
+                                });
+                            </script>
+                        {% else %}
+                            <!-- sweetalert js -->
+                            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                                var m = "{{ message }}";
+                                Swal.fire({
+                                    icon: 'error',
+                                    iconHtml: '<i class="fa fa-warning"></i>',
+                                    text: m,
+                                    confirmButtonColor: 'black',
+                                    color: '#000',
+                                    background: 'blue',
+                                    allowEscapeKey: false,
+                                    showClass: {
+                                        popup: 'my-icon'                     // disable popup animation css
+                                    },
+                                });
+                            </script>
+                        {% endif %}
+                    {% endfor %}
                     <div class="card-header">
                         <div class="col"><h3>List Products | Share</h3></div>
                         <div class="col"><h3 class="text-end"><a class="text-blue" href="{% url 'AddProductBackend' %}">Add
@@ -33,7 +65,7 @@
                             </thead>
                             <tbody>
                             {% for products in page.object_list %}
-                                <tr class="text-center">
+                                <tr class="">
                                     <td>{{ products.id }}</td>
                                     <td>{{ products.product_name|truncatechars:50 }}</td>
                                     <td class="text-center text-black font-weight-bold">
@@ -50,7 +82,8 @@
 
                                     </td>
                                     <td>
-                                        <a href="{% url 'ViewProductBackend' products.id %}" class="btn btn-sm btn-primary">View</a>
+                                        <a href="{% url 'ViewProductBackend' products.id %}"
+                                           class="btn btn-sm btn-primary">View</a>
                                         <a href="{% url 'SellersIndex' %}"
                                            class="btn btn-sm btn-outline-success">Seller</a>
                                         <a href="{% url 'UpdateProductBackend' products.id %}"

@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
@@ -8,6 +9,7 @@ from .forms import ContactUsForm, AddressForm, AboutUsForm, ContactUsFrontendFor
 from .models import AboutUs, Address, ContactUs, ContactUsFrontend
 
 
+@login_required
 def CompanyIndex(request):
     company = AboutUs.objects.order_by('-id')
     paginator = Paginator(company, 1)
@@ -20,7 +22,7 @@ def CompanyIndex(request):
     }
     return render(request, 'frontend/company/about_us/index.html', content)
 
-
+@login_required
 def CompanyContactUs(request):
     company = AboutUs.objects.order_by('-id')
 
@@ -29,7 +31,7 @@ def CompanyContactUs(request):
     }
     return render(request, 'frontend/company/about_us/index.html', content)
 
-
+@login_required
 def AddressView(request):
     data = Address.objects.all()
 
@@ -41,6 +43,7 @@ def AddressView(request):
 
 # start About Us backend
 # IndexAboutUs
+@login_required
 def IndexAboutUs(request):
     company = AboutUs.objects.order_by('-id')
     paginator = Paginator(company, 2)
@@ -55,12 +58,14 @@ def IndexAboutUs(request):
 
 
 # function Views about us
+@login_required
 def ViewAboutUsBackend(request, id):
     data = get_object_or_404(AboutUs, id=id)
     return render(request, 'backend/company/about_us/view_about.html', {'data': data})
 
 
 # function Update about us
+@login_required
 def UpdateAboutUsBackend(request, id):
     update_about = AboutUs.objects.get(id=id)
     if request.method == "POST":
@@ -80,6 +85,7 @@ def UpdateAboutUsBackend(request, id):
 
 
 # Add about us backend
+@login_required
 def AddAboutUs(request):
     if request.method == "POST":
         form = AboutUsForm(request.POST)
@@ -97,6 +103,7 @@ def AddAboutUs(request):
 
 # start Contact Backend
 # IndexContactBackend
+@login_required
 def IndexContactBackend(request):
     contact_us = ContactUsFrontend.objects.order_by('-id')
     paginator = Paginator(contact_us, 12)
@@ -111,13 +118,15 @@ def IndexContactBackend(request):
 
 
 # views or detail contact us
+@login_required
 def ViewContactUsBackend(request, id):
     data = get_object_or_404(ContactUsFrontend, id=id)
-    return render(request, 'backend/company/contact_us/view_contact.html', {'data':data})
+    return render(request, 'backend/company/contact_us/view_contact.html', {'data': data})
 
 
 # start frontend Views
 # IndexContactUsFrontend & Add Message contact us
+@login_required
 def IndexContactUsFrontend(request):
     if request.method == "POST":
         form = ContactUsFrontendForm(request.POST)
@@ -133,7 +142,7 @@ def IndexContactUsFrontend(request):
         form = ContactUsFrontendForm()
     return render(request, 'frontend/company/contact_us/index.html', {'form': form})
 
-
+@login_required
 def AddContactUsFrontend(request):
     pass
 

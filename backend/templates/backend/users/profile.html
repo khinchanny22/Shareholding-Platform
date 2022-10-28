@@ -1,0 +1,55 @@
+{% extends "layouts/backend.html" %}
+{% block title %}Profile Page{% endblock title %}
+{% block content %}
+    <div class="content-body">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="col"><h3>Update User Profile</h3></div>
+                    <div class="col">
+                        <h3 class="text-end">
+                            <a class="text-success" href="#">
+                                <i class="bi bi-cart-check-fill"></i>
+                            </a>
+                            <a class="text-danger" href="#">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a class="text-blue" href="{% url 'User' %}">
+                                <i class="bi bi-house-door-fill"></i>
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+                {% if user_form.errors %}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <div id="form_errors">
+                            {% for key, value in user_form.errors.items %}
+                                <strong>{{ value }}</strong>
+                            {% endfor %}
+                        </div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">{% load crispy_forms_tags %}
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col">{{ user_form.username|as_crispy_field }}</div>
+                            <div class="col">{{ user_form.email|as_crispy_field }}</div>
+                        </div>
+                        <br><br>
+                        <div class="row">
+                            <div class="col">{{ profile_form.avatar|as_crispy_field }}</div>
+                            <div class="col">{{ profile_form.bio|as_crispy_field }}</div>
+                        </div>
+                        <br><br>
+                        <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                        <button type="reset" class="btn btn-danger btn-lg">Reset</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

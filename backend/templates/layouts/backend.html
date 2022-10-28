@@ -873,7 +873,9 @@
             <div class="dropdown header-profile">
                 <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
 
-                    <img src="{% static 'images/profile/user.jpeg' %}" width="20" alt=""/>
+                    <img src="{{user.author.picture.url}}" width="20" alt=""/>
+
+
                     <div class="header-info">
                      {% if user.is_authenticated %}
                         <span class="font-w400 mb-0">Welcome,{{user.username}}</span>
@@ -930,24 +932,35 @@
                 {#							<li><a href="{% url 'ProductCost' %}">Products Price</a></li>#}
                 {#                        </ul>#}
                 {#                    </li>#}
+
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                    <span class="nav-text">Seller Management</span>
+                    <i class="fa fa-credit-card" aria-hidden="true"></i>
+                    <span class="nav-text">Primary Market</span>
                 </a>
                     <ul aria-expanded="false">
-                        <li><a href="#">Promote Shares</a></li>
-                        <li><a href="#">Seller Shares</a></li>
-                        <li><a href="#">List Invoice Seller</a></li>
+                        </li><li><a href="{% url 'IndexProductBackend' %}">Product | Share</a></li>
+                        <li><a href="{% url 'IndexLookShareBackend' %}">Company - Buyer</a>
+{#                        <li><a href="#">Share Buyer</a></li>#}
                     </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="fa fa-credit-card" aria-hidden="true"></i>
-                    <span class="nav-text">Buyer Management</span>
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    <span class="nav-text">Secondary Market</span>
                 </a>
                     <ul aria-expanded="false">
-                        <li><a href="#">Look for Shares</a></li>
-                        <li><a href="{% url 'IndexProductBackend' %}">Product | Share</a></li>
-                        <li><a href="#">List Invoice Buyer</a></li>
+                        <li><a href="#">Seller - Buyer</a></li>
+{#                        <li><a href="#">Seller Shares</a></li>#}
+{#                        <li><a href="#">List Invoice Seller</a></li>#}
+                    </ul>
+                </li>
+                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                   <i class="bi bi-arrow-right-square-fill"></i>
+                    <span class="nav-text">Broker | Mandate</span>
+                </a>
+                    <ul aria-expanded="false">
+                        </li><li><a href="#">Commission</a></li>
+{#                        <li><a href="#">Company - Buyer</a>#}
+{#                        <li><a href="#">Share Buyer</a></li>#}
                     </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -969,7 +982,7 @@
                 </a>
                     <ul aria-expanded="false">
                         <li><a href="{% url 'User' %}">Users Management</a></li>
-                        <li><a href="#">User Permission</a></li>
+                        <li><a href="{% url 'UserPermission' %}">User Permissions</a></li>
                         <li><a href="#">User Role</a></li>
                     </ul>
                 </li>

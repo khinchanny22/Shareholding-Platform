@@ -9,16 +9,18 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.template.loader import render_to_string
+from django.urls import reverse
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 
-from .tokens import generate_token
 from .forms import NewUserForm
+from .tokens import generate_token
+
 
 from django.contrib.auth import login, authenticate, logout  # add this
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm  # add this
-from .models import Users
+from .models import Users, UserProfileLogin
 
 
 # Create your views here.
@@ -61,3 +63,4 @@ def logout_request(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
     return redirect("login_request")
+

@@ -1,48 +1,100 @@
 {% extends 'layouts/backend.html' %}
 {% block content %}
-<div class="content-body">
-            <!-- row -->
-			<div class="container-fluid">
-    <div class="row">
-        <div class="card">
-            <div class="card-header">
-                <div class="col"><h3>List Users Management</h3></div>
-                <div class="col"><h3 class="text-end"><a href="#">Add User</a></h3></div>
-            </div>
-            <div class="card-body">
-                <table class="table">
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>User</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Last Login</th>
-        <th>Date Joined</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-    {% for data in users %}
-      <tr>
-        <td>{{ data.id}}</td>
-        <td>{{ data.username}}</td>
-        <td>{{ data.first_name}}</td>
-        <td>{{ data.last_name}}</td>
-        <td>{{ data.email}}</td>
-        <td>{{ data.last_login}}</td>
-        <td>{{ data.date_joined}}</td>
-        <td>
-            <a href="#" class="btn btn-sm btn-primary">View</a>
-            <a href="#" class="btn btn-sm btn-success">Update</a>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+    {% load static %}
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col">
+                            <h3>List Users Management</h3>
+                        </div>
+                        <div class="col">
+                            <h3 class="text-end">
+                                <a class="text-blue" href="{% url 'CreateUserBackend' %}">Add User</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                            <tr class="text-blue">
+                                <th>No</th>
+                                <th>User Name</th>
+                                <th>Password</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>User Image</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for data in page.object_list %}
+                                <tr>
+                                    <td>{{ data.id }}</td>
+                                    <td>{{ data.username }}</td>
+                                    <td>{{ data.password|truncatechars:10}}</td>
+                                    <td>{{ data.first_name }}</td>
+                                    <td>{{ data.last_name }}</td>
+                                    <td>{% if data.profile_picture %}
+                                        {{ data.profile_picture.url }}
+                                    {% else %}
+                                        <img src="{% static 'img.png' %}" alt="">
+                                    {% endif %}
+
+                                    </td>
+                                    <td>{{ data.email }}</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-primary">View</a>
+                                        <a href="{% url 'profile' %}" class="btn btn-sm btn-success">Update</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-body">
+                        <!--Pagination-->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                {% if page.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page.previous_page_number }}">Previous</a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+                                    </li>
+                                {% endif %}
+                                {% for i in page.paginator.page_range %}
+                                    {% if page.number == i %}
+                                        <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                {{ i }}
+                <span class="sr-only">(Current)</span>
+              </span>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if page.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page.next_page_number }}">Next</a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        <!--end of Pagination-->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-            </div></div>
 {% endblock %}

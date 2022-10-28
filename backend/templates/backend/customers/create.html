@@ -4,9 +4,9 @@
     <!-- row -->
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header"><h4>Add Customers</h4></div>
+            <div class="card-header"><h3>Add Customers</h3></div>
             <div class="card-body">{% load crispy_forms_tags %}
-                <form action="" method="post">
+                <form action="" method="post" class="needs-validation" novalidate>
                     {% csrf_token %}
                     <div class="row">
                        <div class="col">{{ form.customer_name|as_crispy_field }}</div>
@@ -18,10 +18,12 @@
                     </div>
                     <div class="row">
                        <div class="col">{{ form.customer_status|as_crispy_field }}</div>
-                       <div class="col"></div>
+                       <div class="col">{{ form.customer_image|as_crispy_field }}</div>
                     </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Save Info</button>
+                    <br><br>
+
+                            <button type="submit" class="btn btn-primary">Save Info</button>
+
                 </form>
             </div>
         </div>

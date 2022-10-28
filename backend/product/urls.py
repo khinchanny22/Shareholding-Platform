@@ -15,4 +15,10 @@ urlpatterns = [
     path('product_price', views.ProductCost, name='ProductCost'),
     path('add_product_price', views.AddProductPrice, name='AddProductPrice'),
     path('update_product_price/<int:id>', views.UpdateProducePrice, name='UpdateProducePrice'),
+
+    # look for share backend
+    path('look_for_share', views.IndexLookShareBackend, name='IndexLookShareBackend'),
+
+    # test Post
+    path('post_test', views.Post, name='Post'),
 ]

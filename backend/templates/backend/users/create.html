@@ -1,0 +1,41 @@
+{% extends 'layouts/backend.html' %}
+{% block content %}
+    <div class="content-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <div class="card-header"><h3 class="text-blue">Add New Users</h3></div>
+                    <div class="card-body">
+                        <form method="post">{% load crispy_forms_tags %}
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col">{{ form.username|as_crispy_field }}</div>
+                                <div class="col">{{ form.email|as_crispy_field }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">{{ form.password1|as_crispy_field }}</div>
+                                <div class="col">{{ form.password2|as_crispy_field }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">{{ form.is_active }}</div>
+                                <div class="col"></div>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-sm">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+{% endblock %}

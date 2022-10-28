@@ -1,19 +1,18 @@
 import os
-from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
-from .forms import ProductForm, ProductPriceForm
-# from .functions import handle_uploaded_file
+from .forms import ProductForm, ProductPriceForm, PostForm
 from .models import *
 
 
 # start product backend
 # function product index backend
+@login_required
 def IndexProductBackend(request):
     product = Product.objects.order_by('-id')
     paginator = Paginator(product, 10)
@@ -27,19 +26,48 @@ def IndexProductBackend(request):
 
 
 # add product backend
+@login_required
 def AddProductBackend(request):
-    if request.method == "POST":
-        form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Add Product successful!')
-        return redirect('IndexProductBackend')
-    form = ProductForm()
-    product = Product.objects.all()
-    return render(request, 'backend/product/create.html', {'form': form, 'product': product})
+    # check if the request is post
+    if request.method == 'POST':
+
+        # Pass the form data to the form class
+        details = ProductForm(request.POST, request.FILES)
+
+        # In the 'form' class the clean function
+        # is defined, if all the data is correct
+        # as per the clean function, it returns true
+        if details.is_valid():
+
+            # Temporarily make an object to be add some
+            # logic into the data if there is such a need
+            # before writing to the database
+            post = details.save(commit=False)
+
+            # Finally write the changes into database
+            post.save()
+            messages.success(request, 'Data Product successful!')
+            # redirect it to some another page indicating data
+            # was inserted successfully
+            return redirect('IndexProductBackend')
+
+        else:
+
+            # Redirect back to the same page if the data
+            # was invalid
+            return render(request, "backend/product/create.html", {'form': details})
+    else:
+
+        # If the request is a GET request then,
+        # create an empty form object and
+        # render it into the page
+        form = ProductForm(None)
+        # return render(request, 'home.html', {'form': form})
+        return render(request, 'backend/product/create.html', {'form': form})
 
 
 # Update Product Backend
+@login_required
 def UpdateProductBackend(request, id):
     # dictionary for initial data with
     # field names as keys
@@ -60,12 +88,14 @@ def UpdateProductBackend(request, id):
 
 
 # view Product Backend
+@login_required
 def ViewProductBackend(request, id):
     data = get_object_or_404(Product, id=id)
     return render(request, 'backend/product/view.html', {'data':data})
 
 
 # start Product Cost Backend
+@login_required
 def ProductCost(request):
     product = ProductPrice.objects.order_by('-id')
     data = {'product': product, }
@@ -73,6 +103,7 @@ def ProductCost(request):
 
 
 # AddProductPrice
+@login_required
 def AddProductPrice(request):
     if request.method == "POST":
         form = ProductPriceForm(request.POST)
@@ -89,6 +120,7 @@ def AddProductPrice(request):
 
 
 # UpdateProducePrice
+@login_required
 def UpdateProducePrice(request, id):
     context = {}
     obj = get_object_or_404(ProductPrice, id=id)
@@ -98,3 +130,50 @@ def UpdateProducePrice(request, id):
         return redirect('ProductCost')
     context["form"] = form
     return render(request, 'backend/product_price/update.html', context)
+
+
+#
+# define the class of a form
+@login_required
+def Post(request):
+    # check if the request is post
+    if request.method == 'POST':
+
+        # Pass the form data to the form class
+        details = PostForm(request.POST)
+
+        # In the 'form' class the clean function
+        # is defined, if all the data is correct
+        # as per the clean function, it returns true
+        if details.is_valid():
+
+            # Temporarily make an object to be add some
+            # logic into the data if there is such a need
+            # before writing to the database
+            post = details.save(commit=False)
+
+            # Finally write the changes into database
+            post.save()
+
+            # redirect it to some another page indicating data
+            # was inserted successfully
+            return HttpResponse("data submitted successfully")
+
+        else:
+
+            # Redirect back to the same page if the data
+            # was invalid
+            return render(request, "backend/product/post_test.html", {'form': details})
+    else:
+
+        # If the request is a GET request then,
+        # create an empty form object and
+        # render it into the page
+        form = PostForm(None)
+        return render(request, 'backend/product/post_test.html', {'form': form})
+
+
+# start look for share
+@login_required
+def IndexLookShareBackend(request):
+    return render(request, 'backend/look_for_share/index.html')

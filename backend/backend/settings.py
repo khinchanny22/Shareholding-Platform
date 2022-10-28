@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*#t+-ud0xw%g=vj*_0q_8mhjjgc=cig#7cuvnjkw=k*r6f(4bk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_bootstrap5',
     'bootstrap5',
+    'bootstrap3',
     # add new
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -69,7 +70,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# add new 
+# add new
 
 
 # Internationalization
