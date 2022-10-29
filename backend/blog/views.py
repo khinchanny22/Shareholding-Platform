@@ -1,13 +1,17 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 
 # Create your views here.
+from django.utils.decorators import method_decorator
+
 from .forms import BlogForm, BlogCommentForm
 from .models import PostBlog
 
 
+@login_required
 def IndexPostBlog(request):
     post_blog = PostBlog.objects.order_by('-id')
     paginator = Paginator(post_blog, 10)
@@ -20,7 +24,7 @@ def IndexPostBlog(request):
 
     return render(request, 'backend/blog/index_blog_post.html', content)
 
-
+@login_required
 def AddPostBlog(request):
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
@@ -32,7 +36,7 @@ def AddPostBlog(request):
         form = BlogForm()
     return render(request, 'backend/blog/create.html', {'form': form})
 
-
+@login_required
 def UpdateBlogPost(request, id):
     post_blog = PostBlog.objects.get(id=id)
     if request.method == "POST":
@@ -51,13 +55,15 @@ def UpdateBlogPost(request, id):
 
 
 # function Views or Details block Backend
+@login_required
 def ViewPostblogBackend(request, id):
     data = get_object_or_404(PostBlog, id=id)
-    return render(request, 'backend/blog/view_post_blog_backend.html', {'data':data})
+    return render(request, 'backend/blog/view_post_blog_backend.html', {'data': data})
 
 
 # starting function
 # blog Post frontend side
+@login_required
 def IndexBlogFrontend(request):
     post_blog_frontend = PostBlog.objects.order_by('-id')
     paginator = Paginator(post_blog_frontend, 5)
@@ -71,6 +77,7 @@ def IndexBlogFrontend(request):
 
 
 # ViewsBlogFrontend
+@login_required
 def ViewsBlogFrontend(request, id):
     data = get_object_or_404(PostBlog, id=id)
     # recent
@@ -101,6 +108,7 @@ def ViewsBlogFrontend(request, id):
 
 
 # RecentPostProduct
+@login_required
 def RecentPostProduct(request):
     recent = PostBlog.objects.order_by('-id')
     paginator = Paginator(recent, 5)
@@ -114,6 +122,7 @@ def RecentPostProduct(request):
 
 
 # PopularPostProduct
+@login_required
 def PopularPostProduct(request):
     popular = PostBlog.objects.all()
     paginator = Paginator(popular, 5)

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*#t+-ud0xw%g=vj*_0q_8mhjjgc=cig#7cuvnjkw=k*r6f(4bk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -67,6 +67,7 @@ MIDDLEWARE = [
     #
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django_session_timeout.middleware.SessionTimeoutMiddleware',
+
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -133,15 +134,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+LOGIN_REDIRECT_URL = 'login_request'  # add new
+LOGIN_URL = 'login_request'  # add New
 
+# starting Auto logout a user after specific time in django
+SESSION_EXPIRE_SECONDS = 3600  # add 3600= 1H
+
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 60  # group by minute
+
+SESSION_TIMEOUT_REDIRECT = 'login_request'
+# end Auto logout a user after specific time in django

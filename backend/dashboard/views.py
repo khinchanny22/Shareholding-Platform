@@ -5,12 +5,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Permission
 from django.core.paginator import Paginator
 from django.http import HttpResponse
-from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse
-from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomUserCreationForm
+from django.shortcuts import render, redirect
 
-from .forms import UpdateUserForm, UpdateProfileForm
+from .forms import CustomUserCreationForm
 
 
 @login_required
@@ -50,6 +47,11 @@ def CreateUserBackend(request):
     form = CustomUserCreationForm()
     return render(request=request, template_name="backend/users/create.html", context={"form": form})
 
+
+# function Update Users Backend
+@login_required
+def UpdateUsersBackend(request):
+    return render(request, 'backend/users/update.html')
 
 @login_required
 def UserPermission(request):

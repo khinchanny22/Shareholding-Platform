@@ -16,12 +16,12 @@ def Customers(request):
     paginator = Paginator(data, 10)
     page_num = request.GET.get('page')
     page = paginator.get_page(page_num)
-
     content = {
         'data': data,
         'page': page,
     }
     return render(request, 'backend/customers/index.html', content)
+
 
 @login_required
 def AddCustomersBackend(request):
@@ -34,6 +34,7 @@ def AddCustomersBackend(request):
     else:
         form = CustomerForm()
     return render(request, 'backend/customers/create.html', {'form': form})
+
 
 @login_required
 def UpdateCustomer(request, id):

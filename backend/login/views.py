@@ -1,31 +1,15 @@
 from django.conf import settings
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
-from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail import EmailMessage, send_mail
-from django.http import HttpResponse, request
 from django.shortcuts import render, redirect
-from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
-from django.template.loader import render_to_string
-from django.urls import reverse
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
 
 from .forms import NewUserForm
-from .tokens import generate_token
-
 
 from django.contrib.auth import login, authenticate, logout  # add this
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm  # add this
-from .models import Users, UserProfileLogin
 
 
 # Create your views here.
-
-
 def register_request(request):
     if request.method == "POST":
         form = NewUserForm(request.POST)

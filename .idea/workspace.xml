@@ -34,6 +34,10 @@
       <change afterPath="$PROJECT_DIR$/backend/media/customer/2022-05-20_11.49.54_s4xm3oi.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/customer/2022-05-25_09.22.35.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/customer/client_A.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/media/customer/client_A_50q4iL2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/media/customer/client_A_DUn9DEB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/media/customer/client_A_Q6Qu8tP.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/media/customer/client_A_UCaFQGe.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/product/2022-05-20_11.49.54.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/product/client_A.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/product/client_A_52efmYt.jpg" afterDir="false" />
@@ -70,44 +74,11 @@
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/product/post_test.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/product/view.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/users/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/users/edit_profile.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/users/profile.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/users/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/templates/backend/users/update.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/frontend/blog/frontend_post_blog.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/frontend/blog/frontend_post_views.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/bootstrap.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/components.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/renderers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/templates/bootstrap3/bootstrap3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/templates/bootstrap3/field_error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/templates/bootstrap3/field_help_text.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/templates/bootstrap3/field_help_text_and_errors.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/templates/bootstrap3/form_errors.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/templates/bootstrap3/messages.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/templates/bootstrap3/pagination.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/templatetags/bootstrap3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/text.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/bootstrap3/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django/utils/six.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_bootstrap3-22.1.dist-info/AUTHORS" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_bootstrap3-22.1.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_bootstrap3-22.1.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_bootstrap3-22.1.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_bootstrap3-22.1.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_bootstrap3-22.1.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_bootstrap3-22.1.dist-info/WHEEL" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_bootstrap3-22.1.dist-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_utils_six-2.0.dist-info/INSTALLER" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_utils_six-2.0.dist-info/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_utils_six-2.0.dist-info/METADATA" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_utils_six-2.0.dist-info/RECORD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_utils_six-2.0.dist-info/REQUESTED" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/djangoenv/lib/python3.10/site-packages/django_utils_six-2.0.dist-info/WHEEL" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
@@ -121,6 +92,7 @@
       <change beforePath="$PROJECT_DIR$/backend/company/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/company/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/company/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/company/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/company/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/company/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/customer/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/customer/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/customer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/customer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/urls.py" afterDir="false" />
@@ -148,6 +120,7 @@
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/customers/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/customers/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/customers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/customers/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/customers/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/customers/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/login/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/product/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/product/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/product/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/product/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/product/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/product/update.html" afterDir="false" />
@@ -330,7 +303,8 @@
       <workItem from="1666366763562" duration="751000" />
       <workItem from="1666367526967" duration="5418000" />
       <workItem from="1666426237815" duration="84647000" />
-      <workItem from="1666672623312" duration="47691000" />
+      <workItem from="1666672623312" duration="50447000" />
+      <workItem from="1667022176468" duration="8070000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1666368137757</created>

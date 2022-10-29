@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 
 class Customer(models.Model):
-    customer_name = models.CharField(max_length=50)
+    customer_name = models.CharField(max_length=50, unique=True)
     customer_contact = models.CharField(max_length=15, unique=True)
     customer_email = models.EmailField(unique=True)
     customer_image = models.ImageField(upload_to='customer/')
@@ -22,4 +22,4 @@ class Customer(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.customer_name
+        return str(self.customer_image)
