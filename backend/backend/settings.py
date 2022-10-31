@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'bootstrap5',
     'bootstrap3',
+    'sorl.thumbnail',
     # add new
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

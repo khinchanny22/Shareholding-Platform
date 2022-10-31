@@ -21,11 +21,11 @@
                             <thead>
                             <tr class="text-blue">
                                 <th>No</th>
+                                <th>Full Name</th>
                                 <th>User Name</th>
                                 <th>Password</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
                                 <th>User Image</th>
+                                <th>Phone</th>
                                 <th>Email</th>
                                 <th>Action</th>
                             </tr>
@@ -34,21 +34,21 @@
                             {% for data in page.object_list %}
                                 <tr>
                                     <td>{{ data.id }}</td>
+                                    <td>{{ data.profile.full_name }}</td>
                                     <td>{{ data.username }}</td>
                                     <td>{{ data.password|truncatechars:10}}</td>
-                                    <td>{{ data.first_name }}</td>
-                                    <td>{{ data.last_name }}</td>
-                                    <td>{% if data.profile_picture %}
-                                        {{ data.profile_picture.url }}
-                                    {% else %}
-                                        <img src="{% static 'img.png' %}" alt="">
-                                    {% endif %}
-
+                                    <td>
+                                        {% if data.profile.image %}
+                                            <img height="50px" width="50px" src="{{ data.profile.image.url }}" alt="">
+                                        {% else %}
+                                            <img src="{% static 'image.png' %}" alt="">
+                                        {% endif %} 
                                     </td>
+                                    <td>{{ data.profile.phone }}</td>
                                     <td>{{ data.email }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-primary">View</a>
-                                        <a href="#" class="btn btn-sm btn-success">Update</a>
+                                        <a href="{% url 'ViewUserManagement' data.id %}" class="btn btn-sm btn-primary">Profile</a>
+                                        <a href="{% url 'UpdateUsersBackend' %}" class="btn btn-sm btn-danger">Disable</a>
                                     </td>
                                 </tr>
                             {% endfor %}

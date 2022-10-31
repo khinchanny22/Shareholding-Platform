@@ -1,7 +1,6 @@
 from django.conf import settings
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
 
+from django.shortcuts import render, redirect
 from .forms import NewUserForm
 
 from django.contrib.auth import login, authenticate, logout  # add this
@@ -42,9 +41,9 @@ def login_request(request):
     return render(request, template_name="backend/login/index.html", context={"login_form": form})
 
 
-@login_required()
+
+
 def logout_request(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
     return redirect("login_request")
-

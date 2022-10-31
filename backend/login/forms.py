@@ -1,10 +1,8 @@
 from django import forms
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django.forms import ModelForm
 # Create your forms here.
-from .forms import ModelForm
-from .models import *
 
 
 class NewUserForm(UserCreationForm):
@@ -20,5 +18,4 @@ class NewUserForm(UserCreationForm):
         if commit:
             user.save()
         return user
-
 

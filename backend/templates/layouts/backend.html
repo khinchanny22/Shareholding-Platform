@@ -872,15 +872,19 @@
         <div class="deznav-scroll">
             <div class="dropdown header-profile">
                 <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+                    {% if user.profile.image %}
+                        <img src="{{ user.profile.image.url }}" alt="">
+                    {% else %}
+                        <img src="{% static 'img.png' %}" alt="">
+                    {% endif %} 
+                    
 
-                    <img src="{{user.author.picture.url}}" width="20" alt=""/>
+                    {% if user.is_authenticated %}
+                        <div class="header-info">
 
-
-                    <div class="header-info">
-                     {% if user.is_authenticated %}
-                        <span class="font-w400 mb-0">Welcome,{{user.username}}</span>
-                         <small class="text-end font-w400">{{ user.email }}</small>
-                        {% endif %}
+                        <span class="font-w400 mb-0">Welcome,{{ user.username }}</span>
+                        <small class="text-end font-w400">{{ user.email }}</small>
+                    {% endif %}
 
                     </div>
                     <div class="dropdown-menu dropdown-menu-end">
@@ -938,9 +942,10 @@
                     <span class="nav-text">Primary Market</span>
                 </a>
                     <ul aria-expanded="false">
-                        </li><li><a href="{% url 'IndexProductBackend' %}">Product | Share</a></li>
+                        </li>
+                        <li><a href="{% url 'IndexProductBackend' %}">Product | Share</a></li>
                         <li><a href="{% url 'IndexLookShareBackend' %}">Company - Buyer</a>
-{#                        <li><a href="#">Share Buyer</a></li>#}
+                            {#                        <li><a href="#">Share Buyer</a></li>#}
                     </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -949,18 +954,19 @@
                 </a>
                     <ul aria-expanded="false">
                         <li><a href="#">Seller - Buyer</a></li>
-{#                        <li><a href="#">Seller Shares</a></li>#}
-{#                        <li><a href="#">List Invoice Seller</a></li>#}
+                        {#                        <li><a href="#">Seller Shares</a></li>#}
+                        {#                        <li><a href="#">List Invoice Seller</a></li>#}
                     </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                   <i class="bi bi-arrow-right-square-fill"></i>
+                    <i class="bi bi-arrow-right-square-fill"></i>
                     <span class="nav-text">Broker | Mandate</span>
                 </a>
                     <ul aria-expanded="false">
-                        </li><li><a href="#">Commission</a></li>
-{#                        <li><a href="#">Company - Buyer</a>#}
-{#                        <li><a href="#">Share Buyer</a></li>#}
+                        </li>
+                        <li><a href="#">Commission</a></li>
+                        {#                        <li><a href="#">Company - Buyer</a>#}
+                        {#                        <li><a href="#">Share Buyer</a></li>#}
                     </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -991,8 +997,8 @@
                     <span class="nav-text">Settings</span>
                 </a>
                     <ul aria-expanded="false">
-                        <li><a href="{% url 'IndexAboutUs' %}">About Us</a></li>
-                        <li><a href="{% url 'IndexContactBackend' %}">Contact Us</a></li>
+                        <li><a href="{% url 'IndexAboutUs' %}">About Setting</a></li>
+                        <li><a href="{% url 'IndexContactBackend' %}">Contact Form</a></li>
                         <li><a href="{% url 'IndexPostBlog' %}">News</a></li>
                         <li><a href="#">Support</a></li>
                     </ul>
@@ -1065,19 +1071,19 @@
     <!--**********************************
         Footer start
     ***********************************-->
-{#    <div class="footer">#}
-{##}
-{#        <div class="copyright">#}
-{#            <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">KHIN CHANNY</a> | 2022</p>#}
-{#        </div>#}
-{#    </div>#}
+    {#    <div class="footer">#}
+    {##}
+    {#        <div class="copyright">#}
+    {#            <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">KHIN CHANNY</a> | 2022</p>#}
+    {#        </div>#}
+    {#    </div>#}
 
-<!-- Copyright -->
-  <div class="text-center p-4">
-    © 2022 Designed & Developed by:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">KHIN CHANNY</a> | 2022</a>
-  </div>
-  <!-- Copyright -->
+    <!-- Copyright -->
+    <div class="text-center p-4">
+        © 2022 Designed & Developed by:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">KHIN CHANNY</a> | 2022</a>
+    </div>
+    <!-- Copyright -->
     <!--**********************************
         Footer end
     ***********************************-->

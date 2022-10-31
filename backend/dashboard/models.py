@@ -6,14 +6,18 @@ from django.dispatch import receiver
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=100, blank=True)
-    last_name = models.CharField(max_length=100, blank=True)
-    email = models.EmailField(max_length=150)
-    signup_confirmation = models.BooleanField(default=False)
+    customer = models.OneToOneField(User, on_delete=models.CASCADE)
+    full_name = models.CharField(max_length=50)
+    address = models.CharField(max_length=200)
+    phone = models.CharField(max_length=50)
+    image = models.ImageField(default='default.png',
+                              upload_to='profile_images')
 
     def __str__(self):
-        return self.user.username
+        return f'{self.customer.username}-Profile'
+
+    def p_image(self):
+        return self.image
 
 
 # resizing images

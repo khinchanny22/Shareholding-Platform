@@ -1,13 +1,12 @@
-from django.contrib.auth import forms
 from django.contrib import messages
-from django.contrib.auth import login, get_user_model
+from django.contrib.auth import login, get_user_model, get_user
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Permission
 from django.core.paginator import Paginator
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
-
-from .forms import CustomUserCreationForm
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Profile
+from .forms import CustomUserCreationForm, UserUpdateForm, ProfileUpdateForm
 
 
 @login_required
@@ -19,19 +18,26 @@ def Dashboard(request):
 def User(request):
     User = get_user_model()
     users = User.objects.order_by('-id')
+    # pagination
     paginator = Paginator(users, 10)
     page_num = request.GET.get('page')
     page = paginator.get_page(page_num)
-    data = {
+    # user profile
+    profile = Profile.objects.all()
+    context = {
         'users': users,
-        'page': page
+        'page': page,
+        'profile': profile
     }
-    return render(request, 'backend/users/index.html', data)
+    return render(request, 'backend/users/index.html', context)
 
 
 @login_required
-def ViewUserManagement(request):
-    pass
+def ViewUserManagement(request, id):
+    context = {
+        'user':request.user
+    }
+    return render(request, 'backend/users/profile.html', context)
 
 
 @login_required
@@ -51,7 +57,24 @@ def CreateUserBackend(request):
 # function Update Users Backend
 @login_required
 def UpdateUsersBackend(request):
-    return render(request, 'backend/users/update.html')
+    if request.method == 'POST':
+        user_form = UserUpdateForm(request.POST, instance=request.user)
+        profile_form = ProfileUpdateForm(
+            request.POST, request.FILES, instance=request.user.profile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            return redirect('User')
+    else:
+        user_form = UserUpdateForm(instance=request.user)
+        profile_form = ProfileUpdateForm(instance=request.user.profile)
+
+    context = {
+        'user_form': user_form,
+        'profile_form': profile_form,
+    }
+    return render(request, 'backend/users/update.html', context)
+
 
 @login_required
 def UserPermission(request):
