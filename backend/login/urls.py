@@ -8,5 +8,8 @@ urlpatterns = [
     path("register", views.register_request, name="register"),
     path("logout_request", views.logout_request, name="logout_request"),
 
+    # customer register frontend
+    path('register_customer_frontend', views.CustomerRegisterFrontend, name='CustomerRegisterFrontend'),
+
 
 ]

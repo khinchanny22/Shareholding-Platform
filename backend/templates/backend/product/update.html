@@ -9,15 +9,15 @@
                     <form method="POST" class="post-form text-dark" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="row">
-                            <div class="col">{{ form.product_name|as_crispy_field }}</div>
-                            <div class="col">{{ form.product_image|as_crispy_field }}</div>
+                            <div class="col">{{ update_product.product_name|as_crispy_field }}</div>
+                            <div class="col">{{ update_product.product_image|as_crispy_field }}</div>
                         </div>
                         <div class="row">
-                            <div class="col">{{ form.product_quantity|as_crispy_field }}</div>
-                            <div class="col">{{ form.product_price|as_crispy_field }}</div>
+                            <div class="col">{{ update_product.product_quantity|as_crispy_field }}</div>
+                            <div class="col">{{ update_product.product_price|as_crispy_field }}</div>
                         </div>
                         <div class="row">
-                            <div class="col">{{ form.product_description|as_crispy_field }}</div>
+                            <div class="col">{{ update_product.product_description|as_crispy_field }}</div>
                             <div class="col"></div>
                         </div>
 

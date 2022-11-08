@@ -1,0 +1,74 @@
+{% extends "layouts/backend.html" %}
+{% block content %}
+    <div class="content-body">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="col"><h3>View Customer Detail</h3></div>
+                    <div class="col">
+                        <h3 class="text-end">
+                            <a class="text-success" href="#">
+                                <i class="bi bi-cart-check-fill"></i>
+                            </a>
+                            <a class="text-danger" href="#">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a class="text-blue" href="{% url 'Customers' %}">
+                                <i class="bi bi-house-door-fill"></i>
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+                {% if user_form.errors %}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <div id="form_errors">
+                            {% for key, value in user_form.errors.items %}
+                                <strong>{{ value }}</strong>
+                            {% endfor %}
+                        </div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="img-thumbnail" src="{{ views_customer.customer_image.url }}" alt="profile-image">
+                        </div>
+                        <div class="col-9">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th>ID</th>
+                                    <td>{{ views_customer.id }}</td>
+                                </tr>
+                                <tr>
+                                    <td> Name</td>
+                                    <td>{{ views_customer.customer_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Contact</td>
+                                    <td>{{ views_customer.customer_contact }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>{{ views_customer.customer_email }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Origin</td>
+                                    <td>{{ views_customer.Customer_origin }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>{{ views_customer.customer_status }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

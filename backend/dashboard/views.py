@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import login, get_user_model, get_user
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Permission
+from django.contrib.auth.models import Permission, Group
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
@@ -33,9 +33,18 @@ def User(request):
 
 
 @login_required
-def ViewUserManagement(request, id):
+def ViewUserBackend(request, id):
+    # dictionary for initial data with
+    # field names as keys
+    context = {}
+
+    # add the dictionary during initialization
+    User = get_user_model()
+    data = User.objects.get(id=id)
+
     context = {
-        'user':request.user
+        'data': data,
+        'User': User,
     }
     return render(request, 'backend/users/profile.html', context)
 
@@ -87,3 +96,26 @@ def UserPermission(request):
         'page': page,
     }
     return render(request, 'backend/permission/index.html', context)
+
+
+# user group backend
+@login_required
+def UserGroupBackend(request):
+    user_group = Group.objects.order_by('-id')
+    paginator = Paginator(user_group, 10)
+    page_num = request.GET.get('page')
+    page = paginator.get_page(page_num)
+    context = {
+        'user_group': user_group,
+        'page': page,
+    }
+    return render(request, 'backend/group_user/index.html', context)
+
+
+# detail user group
+def DetailUserGroup(request, id):
+    obj = get_object_or_404(Group, id=id)
+    context = {
+        'obj': obj,
+    }
+    return render(request, 'backend/group_user/detail.html', context)

@@ -1,5 +1,6 @@
 from django.conf import settings
-
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import NewUserForm
 
@@ -38,12 +39,25 @@ def login_request(request):
         else:
             messages.error(request, "Invalid username or password.")
     form = AuthenticationForm()
-    return render(request, template_name="backend/login/index.html", context={"login_form": form})
+    return render(request, template_name="frontend/customers/login.html", context={"login_form": form})
 
-
-
-
+@login_required
 def logout_request(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
     return redirect("login_request")
+
+
+# customer register frontend
+def CustomerRegisterFrontend(request):
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, "registration successful.")
+            return redirect('frontend')
+        messages.error(request, "Unsuccessful registration. Invalid information.")
+    form = NewUserForm()
+    return render(request, 'frontend/customers/register.html', {'form':form})
+# end customer register frontend

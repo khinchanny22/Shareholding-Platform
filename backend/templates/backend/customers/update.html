@@ -12,16 +12,16 @@
                 <form action="" method="post">{% load crispy_forms_tags %}
                     {% csrf_token %}
                     <div class="row">
-                        <div class="col">{{ form.customer_name|as_crispy_field }}</div>
-                        <div class="col">{{ form.customer_contact|as_crispy_field }}</div>
+                        <div class="col">{{ update_customer.customer_name|as_crispy_field }}</div>
+                        <div class="col">{{ update_customer.customer_contact|as_crispy_field }}</div>
                     </div>
                     <div class="row">
-                        <div class="col">{{ form.customer_email|as_crispy_field }}</div>
-                        <div class="col">{{ form.Customer_origin|as_crispy_field }}</div>
+                        <div class="col">{{ update_customer.customer_email|as_crispy_field }}</div>
+                        <div class="col">{{ update_customer.Customer_origin|as_crispy_field }}</div>
                     </div>
                     <div class="row">
-                        <div class="col">{{ form.customer_status|as_crispy_field }}</div>
-                        <div class="col">{{ form.customer_image|as_crispy_field }}</div>
+                        <div class="col">{{ update_customer.customer_status|as_crispy_field }}</div>
+                        <div class="col">{{ update_customer.customer_image|as_crispy_field }}</div>
                     </div>
 
                     <br>

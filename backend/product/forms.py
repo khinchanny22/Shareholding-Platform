@@ -36,9 +36,9 @@ class ProductForm(ModelForm):
             self._errors['product_price'] = self.error_class([
                 'Post Should Contain a minimum of 10 characters'])
 
-        if len(product_image) < 10:
+        if len(product_image) < 100:
             self._errors['product_image'] = self.error_class([
-                'Post Should Contain a minimum of 10 characters'])
+                'Post Should Contain a minimum of 100 characters'])
 
         if int(product_quantity) < 1:
             self._errors['product_quantity'] = self.error_class([

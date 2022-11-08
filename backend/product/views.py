@@ -70,22 +70,20 @@ def AddProductBackend(request):
 # Update Product Backend
 @login_required
 def UpdateProductBackend(request, id):
-    # dictionary for initial data with
-    # field names as keys
-    context = {}
-    # fetch the object related to passed id
-    obj = get_object_or_404(Product, id=id)
-    # pass the object as instance in form
-    form = ProductForm(request.POST or None, instance=obj)
-    # save the data from the form and
-    # redirect to detail_view
-    if form.is_valid():
-        form.save()
-        messages.success(request, 'Update Product successful!')
-        return redirect("IndexProductBackend")
-    # add form dictionary to context
-    context["form"] = form
-    return render(request, 'backend/product/update.html', {'form': form})
+    update_product = Product.objects.get(id=id)
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES, instance=update_product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Update successful!')
+            return redirect("IndexProductBackend")
+        message = 'Something we are wrong!'
+        return render(request, 'backend/product/update.html', {'message': message, 'update_product': form})
+    else:
+        form = Product.objects.get(id=id)
+        update_product = ProductForm(instance=form)
+        content = {'update_product': update_product, 'id': id}
+    return render(request, 'backend/product/update.html', content)
 
 
 # view Product Backend

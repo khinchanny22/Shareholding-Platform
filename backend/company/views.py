@@ -1,10 +1,13 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
+
+from django.contrib.admin.models import LogEntry
 from .forms import ContactUsForm, AddressForm, AboutUsForm, ContactUsFrontendForm
 from .models import AboutUs, Address, ContactUs, ContactUsFrontend
 
@@ -22,6 +25,7 @@ def CompanyIndex(request):
     }
     return render(request, 'frontend/company/about_us/index.html', content)
 
+
 @login_required
 def CompanyContactUs(request):
     company = AboutUs.objects.order_by('-id')
@@ -30,6 +34,7 @@ def CompanyContactUs(request):
         'company': company
     }
     return render(request, 'frontend/company/about_us/index.html', content)
+
 
 @login_required
 def AddressView(request):
@@ -46,7 +51,7 @@ def AddressView(request):
 @login_required
 def IndexAboutUs(request):
     company = AboutUs.objects.order_by('-id')
-    paginator = Paginator(company, 2)
+    paginator = Paginator(company, 1)
     page_num = request.GET.get('page')
     page = paginator.get_page(page_num)
 
@@ -142,8 +147,16 @@ def IndexContactUsFrontend(request):
         form = ContactUsFrontendForm()
     return render(request, 'frontend/company/contact_us/index.html', {'form': form})
 
+
 @login_required
 def AddContactUsFrontend(request):
     pass
 
+
 # End Frontend
+# admin log
+def AdminLogBackend(request):
+    logs = LogEntry.objects.all()
+    return HttpResponse(logs)
+    exit()
+    return render(request, 'backend/company/admin_log/index.html')

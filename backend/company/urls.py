@@ -24,4 +24,7 @@ urlpatterns = [
     path('contact_detail', views.CompanyContactUs, name='CompanyContactUs'),
     path('address_detail/<int:id>', views.AddressView, name='AddressView'),
 
+    # session
+    path('admin_log_backend', views.AdminLogBackend, name='AdminLogBackend'),
+
 ]

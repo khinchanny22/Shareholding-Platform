@@ -10,7 +10,7 @@ class ProductAdmin(admin.ModelAdmin):
     def image_tag(self, obj):
         return format_html('<img src="{}" style="max-width:100px; max-height:100px"/>'.format(obj.product_image.url))
 
-    list_display = ['product_name', 'product_price', 'product_quantity', 'product_description', 'image_tag']
+    list_display = ['id', 'product_name', 'product_price', 'product_quantity', 'product_description', 'image_tag']
     search_fields = ['product_name', 'product_price',]
     list_filter = ['product_name', 'product_price',]
 

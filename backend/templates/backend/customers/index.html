@@ -7,9 +7,50 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="card">
+                    {% for message in messages %}
+                        {% if message.tags == 'success' %}
+                            <!-- sweetalert js -->
+                            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                                var m = "{{ message }}";
+                                Swal.fire({
+                                    icon: 'success',
+                                    iconHtml: '<i class="fa fa-check"></i>',
+                                    text: m,
+                                    confirmButtonColor: 'red',
+                                    color: '#000',
+                                    background: 'gray',
+                                    allowEscapeKey: false,
+                                    showClass: {
+                                        popup: 'my-icon'                     // disable popup animation css
+                                    },
+                                });
+                            </script>
+                        {% else %}
+                            <!-- sweetalert js -->
+                            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                            <script>
+                                var m = "{{ message }}";
+                                Swal.fire({
+                                    icon: 'error',
+                                    iconHtml: '<i class="fa fa-warning"></i>',
+                                    text: m,
+                                    confirmButtonColor: 'black',
+                                    color: '#000',
+                                    background: 'blue',
+                                    allowEscapeKey: false,
+                                    showClass: {
+                                        popup: 'my-icon'                     // disable popup animation css
+                                    },
+                                });
+                            </script>
+                        {% endif %}
+                    {% endfor %}
                     <div class="card-header">
                         <div class="col"><h3>Lists Customers</h3></div>
-                        <div class="col"><h3 class="text-end"><a class="text-blue" href="{% url 'AddCustomersBackend' %}">Add Product</a></h3>
+                        <div class="col"><h3 class="text-end">
+                            <a class="text-blue" href="{% url 'AddCustomersBackend' %}">Add Product</a>
+                        </h3>
                         </div>
                     </div>
                     <div class="card-body">
@@ -48,8 +89,9 @@
                                         <td>{{ customer.customer_status }}</td>
                                         <td>#</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-primary">View</a>
-                                            <a href="{% url 'UpdateCustomer' customer.id %}"
+                                            <a href="{% url 'ViewCustomerBackend' customer.id %}"
+                                               class="btn btn-sm btn-primary">View</a>
+                                            <a href="{% url 'UpdateCustomerBackend' customer.id %}"
                                                class="btn btn-sm btn-success">Update</a>
                                         </td>
                                     </tr>

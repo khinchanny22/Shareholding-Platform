@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'bootstrap5',
     'bootstrap3',
     'sorl.thumbnail',
+    'django_admin_logs',
     # add new
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -156,5 +157,8 @@ SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
 
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 60  # group by minute
 
-SESSION_TIMEOUT_REDIRECT = 'login_request'
+SESSION_TIMEOUT_REDIRECT = 'frontend'
 # end Auto logout a user after specific time in django
+
+DJANGO_ADMIN_LOGS_DELETABLE = True # add new
+DJANGO_ADMIN_LOGS_ENABLED = False # add new

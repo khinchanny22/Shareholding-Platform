@@ -47,7 +47,7 @@
                                     <td>{{ data.profile.phone }}</td>
                                     <td>{{ data.email }}</td>
                                     <td>
-                                        <a href="{% url 'ViewUserManagement' data.id %}" class="btn btn-sm btn-primary">Profile</a>
+                                        <a href="{% url 'ViewUserBackend' data.id %}" class="btn btn-sm btn-primary">Profile</a>
                                         <a href="{% url 'UpdateUsersBackend' %}" class="btn btn-sm btn-danger">Disable</a>
                                     </td>
                                 </tr>

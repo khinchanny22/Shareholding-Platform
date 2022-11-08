@@ -1,5 +1,4 @@
 {% extends "layouts/backend.html" %}
-{% block title %}Profile Page{% endblock title %}
 {% block content %}
     <div class="content-body">
         <div class="container-fluid">
@@ -35,14 +34,14 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-3">
-                            <img class="img-thumbnail" src="{{ user.profile.image.url }}" alt="profile-image">
+                            <img class="img-thumbnail" src="{{ data.profile.image.url }}" alt="profile-image">
                         </div>
                         <div class="col-9">
                             <table class="table">
                                 <tbody>
                                 <tr>
                                     <th>ID</th>
-                                    <td>{{ user.id }}</td>
+                                    <td>{{ data.id }}</td>
                                 </tr>
                                 <tr>
                                     <td>Full Name</td>
@@ -50,11 +49,11 @@
                                 </tr>
                                 <tr>
                                     <td>User Name</td>
-                                    <td>{{ user.username }}</td>
+                                    <td>{{ data.username }}</td>
                                 </tr>
                                 <tr>
                                     <td>Email</td>
-                                    <td>{{ user.email }}</td>
+                                    <td>{{ data.email }}</td>
                                 </tr>
                                 <tr>
                                     <td>Phone</td>
