@@ -12,7 +12,6 @@ from .forms import ContactUsForm, AddressForm, AboutUsForm, ContactUsFrontendFor
 from .models import AboutUs, Address, ContactUs, ContactUsFrontend
 
 
-@login_required
 def CompanyIndex(request):
     company = AboutUs.objects.order_by('-id')
     paginator = Paginator(company, 1)
@@ -131,7 +130,7 @@ def ViewContactUsBackend(request, id):
 
 # start frontend Views
 # IndexContactUsFrontend & Add Message contact us
-@login_required
+
 def IndexContactUsFrontend(request):
     if request.method == "POST":
         form = ContactUsFrontendForm(request.POST)

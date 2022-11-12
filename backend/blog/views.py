@@ -24,6 +24,7 @@ def IndexPostBlog(request):
 
     return render(request, 'backend/blog/index_blog_post.html', content)
 
+
 @login_required
 def AddPostBlog(request):
     if request.method == 'POST':
@@ -35,6 +36,7 @@ def AddPostBlog(request):
     else:
         form = BlogForm()
     return render(request, 'backend/blog/create.html', {'form': form})
+
 
 @login_required
 def UpdateBlogPost(request, id):
@@ -63,7 +65,6 @@ def ViewPostblogBackend(request, id):
 
 # starting function
 # blog Post frontend side
-@login_required
 def IndexBlogFrontend(request):
     post_blog_frontend = PostBlog.objects.order_by('-id')
     paginator = Paginator(post_blog_frontend, 5)
@@ -77,7 +78,6 @@ def IndexBlogFrontend(request):
 
 
 # ViewsBlogFrontend
-@login_required
 def ViewsBlogFrontend(request, id):
     data = get_object_or_404(PostBlog, id=id)
     # recent
