@@ -15,7 +15,6 @@ class SupportAdminForm(forms.ModelForm):
 
 
 class TermConditionForm(forms.ModelForm):
-
     class Meta:
         model = TermCondition
         fields = "__all__"

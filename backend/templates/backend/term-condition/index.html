@@ -1,0 +1,99 @@
+{% extends 'layouts/backend.html' %}
+{% block content %}
+    {% load static %}
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col">
+                            <h3>Lists Term and Condition</h3>
+                        </div>
+                        <div class="col">
+                            <h3 class="text-end">
+                                <a class="text-blue" href="{% url 'AddTermCondition' %}">Add Term & Condition</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                            <tr class="text-blue">
+                                <th>No</th>
+                                <th>Title</th>
+                                <th>Contents</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for data in page.object_list %}
+                                <tr>
+                                    <td>{{ data.id }}</td>
+                                    <td>{{ data.title|truncatechars:50 }}</td>
+                                    <td>{{ data.contents|truncatechars:50 }}</td>
+                                    <td>
+                                        <a href="{% url 'ViewsTermCondition' data.id %}" class="btn btn-sm btn-primary">Views</a>
+                                        <a href="{% url 'UpdateTermCondition' data.id %}" class="btn btn-sm btn-success">Update</a>
+                                        <a href="{% url 'DeleteTermCondition' data.id %}" class="btn btn-sm btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-body">
+                        <!--Pagination-->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                {% if page.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page.previous_page_number }}">Previous</a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+                                    </li>
+                                {% endif %}
+                                {% for i in page.paginator.page_range %}
+                                    {% if page.number == i %}
+                                        <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                {{ i }}
+                <span class="sr-only">(Current)</span>
+              </span>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                {% if page.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page.next_page_number }}">Next</a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        <!--end of Pagination-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .card {
+            margin-bottom: 1.875rem;
+            background-color: #fff;
+            transition: all .5s ease-in-out;
+            position: relative;
+            border: 0px solid transparent;
+            border-radius: 8px !important;
+            box-shadow: 0px 5px 5px 0px rgb(82 63 105 / 5%);
+            height: calc(100% - 30px);
+        }
+    </style>
+{% endblock %}
