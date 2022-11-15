@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 # Create your views here.
 
 from django.contrib.admin.models import LogEntry
-from .forms import ContactUsForm, AddressForm, AboutUsForm, ContactUsFrontendForm
+from .forms import ContactUsForm, AddressForm, AboutUsForm, ContactUsFrontendForm, AddressFormTest
 from .models import AboutUs, Address, ContactUs, ContactUsFrontend
 
 
@@ -155,7 +155,6 @@ def AddContactUsFrontend(request):
 # End Frontend
 # admin log
 def AdminLogBackend(request):
-    logs = LogEntry.objects.all()
-    return HttpResponse(logs)
-    exit()
-    return render(request, 'backend/company/admin_log/index.html')
+    form = AddressFormTest()
+    return render(request, 'backend/company/test.html', {'form':form})
+

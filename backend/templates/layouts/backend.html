@@ -926,16 +926,6 @@
                 </a>
 
                 </li>
-                {#                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">#}
-                {#						<i class="flaticon-050-info"></i>#}
-                {#                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>#}
-                {#							<span class="nav-text">Products</span>#}
-                {#						</a>#}
-                {#                        <ul aria-expanded="false">#}
-                {#                            <li><a href="{% url 'ProductIndex' %}">Products</a></li>#}
-                {#							<li><a href="{% url 'ProductCost' %}">Products Price</a></li>#}
-                {#                        </ul>#}
-                {#                    </li>#}
 
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="fa fa-credit-card" aria-hidden="true"></i>
@@ -954,8 +944,6 @@
                 </a>
                     <ul aria-expanded="false">
                         <li><a href="#">Seller - Buyer</a></li>
-                        {#                        <li><a href="#">Seller Shares</a></li>#}
-                        {#                        <li><a href="#">List Invoice Seller</a></li>#}
                     </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -965,9 +953,7 @@
                     <ul aria-expanded="false">
                         </li>
                         <li><a href="#">Commission</a></li>
-                        {#                        <li><a href="#">Company - Buyer</a>#}
-                        {#                        <li><a href="#">Share Buyer</a></li>#}
-                    </ul>
+                      </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-041-graph"></i>
@@ -975,12 +961,7 @@
                 </a>
                     <ul aria-expanded="false">
                         <li><a href="{% url 'Customers' %}">Customers</a></li>
-                        {#                              <li><a href="#">Morris</a></li>#}
-                        <!--                            <li><a href="./chart-chartjs.html">Chartjs</a></li>-->
-                        <!--                            <li><a href="./chart-chartist.html">Chartist</a></li>-->
-                        <!--                            <li><a href="./chart-sparkline.html">Sparkline</a></li>-->
-                        <!--                            <li><a href="./chart-peity.html">Peity</a></li>-->
-                    </ul>
+                      </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="fa fa-users" aria-hidden="true"></i>
@@ -999,9 +980,8 @@
                     <ul aria-expanded="false">
                         <li><a href="{% url 'IndexAboutUs' %}">About Setting</a></li>
                         <li><a href="{% url 'IndexContactBackend' %}">Contact Form</a></li>
-                        <li><a href="{% url 'IndexPostBlog' %}">News</a></li>
-{#                        <li><a href="#">Supports</a></li>#}
-                        <li><a href="#">Session</a></li>
+                        <li><a href="{% url 'IndexPostBlog' %}">News or Blog</a></li>
+                        <li><a href="{% url 'DmsIndex' %}">DMS Form</a></li>
                     </ul>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -1023,43 +1003,16 @@
 
     {% block content %}
     {% endblock %}
-    <!--**********************************
-        Footer start
-    ***********************************-->
-    {#    <div class="footer">#}
-    {##}
-    {#        <div class="copyright">#}
-    {#            <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">KHIN CHANNY</a> | 2022</p>#}
-    {#        </div>#}
-    {#    </div>#}
 
-    <!-- Copyright -->
     <div class="text-center p-4">
         © 2022 Designed & Developed by:
         <a class="text-reset fw-bold" href="https://mdbootstrap.com/">KHIN CHANNY</a> | 2022</a>
     </div>
-    <!-- Copyright -->
-    <!--**********************************
-        Footer end
-    ***********************************-->
 
-    <!--**********************************
-       Support ticket button start
-    ***********************************-->
-
-    <!--**********************************
-       Support ticket button end
-    ***********************************-->
 
 
 </div>
-<!--**********************************
-    Main wrapper end
-***********************************-->
 
-<!--**********************************
-    Scripts
-***********************************-->
 <!-- Required vendors -->
 <script src="{% static 'vendor/global/global.min.js' %}"></script>
 <script src="{% static 'vendor/chart.js/Chart.bundle.min.js' %}"></script>

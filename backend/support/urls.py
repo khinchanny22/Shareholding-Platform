@@ -8,6 +8,7 @@ urlpatterns = [
     path('support_index_frontend', views.IndexSupportFrontend, name='IndexSupportFrontend'),
     path('support_views_frontend/<int:id>', views.ViewsPolicy, name='ViewsPolicy'),
     path('support_update_frontend/<int:id>', views.UpdatePolicy, name='UpdatePolicy'),
+    path('support_delete_frontend/<int:id>', views.DeletePolicy, name='DeletePolicy'),
     path('support_create_frontend', views.CreatePolicy, name='CreatePolicy'),
     #
     path('index_term_condition_frontend', views.IndexTermCondition, name='IndexTermCondition'),

@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 urlpatterns = [
+    path('dms/', include('DMS.urls')),
     path('support/', include('support.urls')),
     path('blog/', include('blog.urls')),
     path('company/', include('company.urls')),

@@ -130,6 +130,20 @@ img.weekly_logo {
     box-shadow: 0px 5px 5px 0px rgb(82 63 105 / 5%);
     height: calc(100% - 30px);
 }
+.btn {
+    padding: 0.938rem 1.5rem;
+    border-radius: 3px !important;
+    font-weight: 400;
+    font-size: 1rem;
+}
+[data-sidebar-style="full"][data-layout="vertical"] .deznav .metismenu > li > a {
+    font-size: 16px;
+    padding: 22px 35px;
+    border-radius: 3px !important;
+    -webkit-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
 .gradient_one {
   background-image: linear-gradient(to right, rgba(186, 1, 181, 0.85) 0%, rgba(103, 25, 255, 0.85) 100%); }
 

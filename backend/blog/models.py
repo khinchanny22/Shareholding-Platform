@@ -1,8 +1,9 @@
 from django.db import models
 from django.conf import settings
 from django.db import models
+from django_ckeditor_5.fields import CKEditor5Field
 
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 
@@ -14,7 +15,7 @@ class PostBlog(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-    content = models.TextField(max_length=1000)
+    content = CKEditor5Field(blank=True, null=True, config_name='extends')
 
     def __str__(self):
         return self.content_title

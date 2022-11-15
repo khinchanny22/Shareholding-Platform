@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'DMS.apps.DmsConfig',
     'support.apps.SupportConfig',
     'blog.apps.BlogConfig',
     'seller.apps.SellerConfig',
@@ -60,6 +61,8 @@ INSTALLED_APPS = [
     'django_admin_logs',
     'ckeditor',  # add new
     'django_ckeditor_5',  # add new
+    'tinymce', # add new
+    'tinymce_4', # add new
     #
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -173,44 +176,40 @@ DJANGO_ADMIN_LOGS_ENABLED = False  # add new
 # add new
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
+customColorPalette = [
+    {
+        'color': 'hsl(4, 90%, 58%)',
+        'label': 'Red'
+    },
+    {
+        'color': 'hsl(340, 82%, 52%)',
+        'label': 'Pink'
+    },
+    {
+        'color': 'hsl(291, 64%, 42%)',
+        'label': 'Purple'
+    },
+    {
+        'color': 'hsl(262, 52%, 47%)',
+        'label': 'Deep Purple'
+    },
+    {
+        'color': 'hsl(231, 48%, 48%)',
+        'label': 'Indigo'
+    },
+    {
+        'color': 'hsl(207, 90%, 54%)',
+        'label': 'Blue'
+    },
+]
+
+CKEDITOR_5_CUSTOM_CSS = 'path_to.css'  # optional
 CKEDITOR_5_CONFIGS = {
     'default': {
         'toolbar': ['heading', '|', 'bold', 'italic', 'link',
                     'bulletedList', 'numberedList', 'blockQuote', 'imageUpload', ],
 
-    }
-}
-
-
-customColorPalette = [
-        {
-            'color': 'hsl(4, 90%, 58%)',
-            'label': 'Red'
-        },
-        {
-            'color': 'hsl(340, 82%, 52%)',
-            'label': 'Pink'
-        },
-        {
-            'color': 'hsl(291, 64%, 42%)',
-            'label': 'Purple'
-        },
-        {
-            'color': 'hsl(262, 52%, 47%)',
-            'label': 'Deep Purple'
-        },
-        {
-            'color': 'hsl(231, 48%, 48%)',
-            'label': 'Indigo'
-        },
-        {
-            'color': 'hsl(207, 90%, 54%)',
-            'label': 'Blue'
-        },
-    ]
-
-CKEDITOR_5_CUSTOM_CSS = 'path_to.css' # optional
-CKEDITOR_5_CONFIGS = {
+    },
     'extends': {
         'blockToolbar': [
             'paragraph', 'heading1', 'heading2', 'heading3',
@@ -220,13 +219,13 @@ CKEDITOR_5_CONFIGS = {
             'blockQuote', 'imageUpload'
         ],
         'toolbar': ['heading', '|', 'outdent', 'indent', '|', 'bold', 'italic', 'link', 'underline', 'strikethrough',
-        'code','subscript', 'superscript', 'highlight', '|', 'codeBlock',
-                    'bulletedList', 'numberedList', 'todoList', '|',  'blockQuote', 'imageUpload', '|',
+                    'code', 'subscript', 'superscript', 'highlight', '|', 'codeBlock',
+                    'bulletedList', 'numberedList', 'todoList', '|', 'blockQuote', 'imageUpload', '|',
                     'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'mediaEmbed', 'removeFormat',
-                    'insertTable',],
+                    'insertTable', ],
         'image': {
             'toolbar': ['imageTextAlternative', 'imageTitle', '|', 'imageStyle:alignLeft', 'imageStyle:full',
-                        'imageStyle:alignRight', 'imageStyle:alignCenter', 'imageStyle:side',  '|'],
+                        'imageStyle:alignRight', 'imageStyle:alignCenter', 'imageStyle:side', '|'],
             'styles': [
                 'full',
                 'side',
@@ -237,8 +236,8 @@ CKEDITOR_5_CONFIGS = {
 
         },
         'table': {
-            'contentToolbar': [ 'tableColumn', 'tableRow', 'mergeTableCells',
-            'tableProperties', 'tableCellProperties' ],
+            'contentToolbar': ['tableColumn', 'tableRow', 'mergeTableCells',
+                               'tableProperties', 'tableCellProperties'],
             'tableProperties': {
                 'borderColors': customColorPalette,
                 'backgroundColors': customColorPalette
@@ -248,13 +247,41 @@ CKEDITOR_5_CONFIGS = {
                 'backgroundColors': customColorPalette
             }
         },
-        'heading' : {
+        'heading': {
             'options': [
-                { 'model': 'paragraph', 'title': 'Paragraph', 'class': 'ck-heading_paragraph' },
-                { 'model': 'heading1', 'view': 'h1', 'title': 'Heading 1', 'class': 'ck-heading_heading1' },
-                { 'model': 'heading2', 'view': 'h2', 'title': 'Heading 2', 'class': 'ck-heading_heading2' },
-                { 'model': 'heading3', 'view': 'h3', 'title': 'Heading 3', 'class': 'ck-heading_heading3' }
+                {'model': 'paragraph', 'title': 'Paragraph', 'class': 'ck-heading_paragraph'},
+                {'model': 'heading1', 'view': 'h1', 'title': 'Heading 1', 'class': 'ck-heading_heading1'},
+                {'model': 'heading2', 'view': 'h2', 'title': 'Heading 2', 'class': 'ck-heading_heading2'},
+                {'model': 'heading3', 'view': 'h3', 'title': 'Heading 3', 'class': 'ck-heading_heading3'}
             ]
         }
     }
+}
+
+# add new
+TINYMCE_DEFAULT_CONFIG = {
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'selector': 'textarea',
+    'theme': 'silver',
+    'plugins': '''
+            textcolor save link image media preview codesample contextmenu
+            table code lists fullscreen  insertdatetime  nonbreaking
+            contextmenu directionality searchreplace wordcount visualblocks
+            visualchars code fullscreen autolink lists  charmap print  hr
+            anchor pagebreak
+            ''',
+    'toolbar1': '''
+            fullscreen preview bold italic underline | fontselect,
+            fontsizeselect  | forecolor backcolor | alignleft alignright |
+            aligncenter alignjustify | indent outdent | bullist numlist table |
+            | link image media | codesample |
+            ''',
+    'toolbar2': '''
+            visualblocks visualchars |
+            charmap hr pagebreak nonbreaking anchor |  code |
+            ''',
+    'contextmenu': 'formats | link image',
+    'menubar': True,
+    'statusbar': True,
 }

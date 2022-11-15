@@ -38,7 +38,6 @@ def CreatePolicy(request):
     form = SupportAdminForm()
     if request.method == "POST":
         form = SupportAdminForm(request.POST, request.FILES)
-
         if form.is_valid():
             try:
                 form.save()
@@ -51,6 +50,16 @@ def CreatePolicy(request):
     else:
         form = SupportAdminForm()
         return render(request, 'backend/support/create.html', {'form': form})
+
+
+@login_required
+def DeletePolicy(request, id):
+    context = {}
+    obj = get_object_or_404(Policy, id=id)
+    if request.method == "POST":
+        obj.delete()
+        return redirect("IndexSupportFrontend")
+    return render(request, 'backend/support/delete.html')
 
 
 @login_required

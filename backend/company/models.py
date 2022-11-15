@@ -1,4 +1,6 @@
 from django.db import models
+from django_ckeditor_5.fields import CKEditor5Field
+from tinymce_4.fields import TinyMCEModelField
 
 
 # Create your models here.
@@ -39,7 +41,7 @@ class Address(models.Model):
     phone = models.IntegerField()
     email = models.EmailField()
     fax = models.IntegerField()
-    address = models.TextField()
+    address = CKEditor5Field(blank=True, null=True, config_name='extends')
 
     def __str__(self):
         return str(self.phone)

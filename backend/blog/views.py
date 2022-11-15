@@ -27,12 +27,18 @@ def IndexPostBlog(request):
 
 @login_required
 def AddPostBlog(request):
-    if request.method == 'POST':
+    form = BlogForm()
+    if request.method == "POST":
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Update successful!')
-            return redirect('IndexPostBlog')
+            try:
+                form.save()
+                messages.success(request, "Created successful!")
+                return redirect('IndexPostBlog')
+            except:
+                message = "Something we are wrong!"
+                form = BlogForm()
+            return render(request, 'backend/blog/create.html', {'message': message, 'form': form})
     else:
         form = BlogForm()
     return render(request, 'backend/blog/create.html', {'form': form})

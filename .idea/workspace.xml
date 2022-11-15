@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a5cb354-49c7-4373-a787-f4e1d062f002" name="Changes" comment="add">
+      <change afterPath="$PROJECT_DIR$/backend/DMS/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/DMS/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/DMS/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/DMS/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/DMS/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/DMS/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/DMS/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/DMS/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/DMS/views.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/blog/migrations/0003_alter_postblog_image.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/blog/migrations/0004_blogcomment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/blog/migrations/0005_alter_postblog_content.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/company/migrations/0004_contactusfrontend.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/company/migrations/0005_contactusfrontend_phone.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/customer/migrations/0004_alter_customer_customer_status.py" afterDir="false" />
@@ -21,6 +31,7 @@
       <change afterPath="$PROJECT_DIR$/backend/login/migrations/0003_userprofile.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/login/migrations/0004_userprofilelogin.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/login/migrations/0005_delete_profile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/media/blog/287526394_750748479450706_5466987104808282876_n.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/blog/8847100742407.jpeg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/blog/Cambodia-Water-1.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/blog/Cambodia-Water-1_AAXoebU.jpg" afterDir="false" />
@@ -30,6 +41,7 @@
       <change afterPath="$PROJECT_DIR$/backend/media/blog/coca.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/blog/coca_R8UCfGe.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/blog/fanta.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/media/blog/monireach.jpeg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/blog/pepsi-01.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/blog/pepsi-01_RhhAsi3.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/blog/pepsi-01_Zt77S6U.jpg" afterDir="false" />
@@ -96,7 +108,9 @@
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/company/about_us/view_about.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/company/admin_log/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/company/contact_us/view_contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/templates/backend/company/test.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/customers/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/templates/backend/document_management_system/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/group_user/detail.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/group_user/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/look_for_share/index.html" afterDir="false" />
@@ -104,6 +118,7 @@
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/product/post_test.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/product/view.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/support/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/templates/backend/support/delete.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/support/index.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/support/update.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/support/views.html" afterDir="false" />
@@ -158,7 +173,9 @@
       <change beforePath="$PROJECT_DIR$/backend/seller/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seller/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/seller/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seller/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/blog/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/blog/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/blog/index_blog_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/blog/index_blog_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/blog/update_blog_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/blog/update_blog_post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/company/about_us/index_about.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/company/about_us/index_about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/company/contact_us/index_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/company/contact_us/index_contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/customers/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/customers/create.html" afterDir="false" />
@@ -354,7 +371,8 @@
       <workItem from="1666672623312" duration="50447000" />
       <workItem from="1667022176468" duration="10682000" />
       <workItem from="1667057540702" duration="65522000" />
-      <workItem from="1668256491698" duration="30736000" />
+      <workItem from="1668256491698" duration="39141000" />
+      <workItem from="1668409503703" duration="8191000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1666368137757</created>

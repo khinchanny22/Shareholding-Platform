@@ -34,7 +34,7 @@
                             </thead>
                             <tbody>
                             {% for basic_employee in page.object_list %}
-                                <tr>
+                                <tr class="clearfix">
                                     <th scope="row">{{ basic_employee.id }}</th>
                                     <th scope="row">{{ basic_employee.content_title|truncatechars:20 }}</th>
                                     <td>
@@ -49,11 +49,13 @@
                                     <td>{{ basic_employee.date }}</td>
                                     <td>{{ basic_employee.author }}</td>
                                     <td>{{ basic_employee.content|truncatechars:30 }}</td>
-                                    <td>
+                                    <td class="clearfix">
                                         <a href="{% url 'UpdateBlogPost' basic_employee.id %}"
                                            class="btn btn-sm btn-primary">Update</a>
                                         <a href="{% url 'ViewPostblogBackend' basic_employee.id %}"
                                            class="btn btn-sm btn-success">View</a>
+                                        <a href="#"
+                                           class="btn btn-sm btn-danger">Delete</a>
                                     </td>
                                 </tr>
                             {% endfor %}

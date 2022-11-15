@@ -5,14 +5,29 @@
         <!-- row -->
         <div class="container-fluid">
             <div class="card">
-                <div class="card-header"><h2>View or Detail Post Blog</h2></div>
+                <div class="card-header">
+                        <div class="col"><h3>Views or Details News or Blog</h3></div>
+                        <div class="col">
+                            <h3 class="text-end">
+                                <a class="text-info" href="">
+                                    <i class="bi bi-eye-fill"></i>
+                                </a>
+                                <a class="text-danger" href="{% url 'UpdateBlogPost' data.id %}">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <a class="text-blue" href="{% url 'IndexPostBlog' %}">
+                                    <i class="bi bi-house-door-fill"></i>
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6 col-md-4 clearfix">
                             {% if data.image %}
                                 <img src="{{ data.image.url }}" class="clearfix img-thumbnail img-responsive" alt="">
                             {% else %}
-                                <img src="{% url 'image.png' %}" alt="">
+                                <img src="{% static 'images/product/1.jpg' %}" alt="">
                             {% endif %}
                         </div>
                         <div class="col-md-8">
@@ -21,7 +36,7 @@
                             <strong>{{ data.date }}</strong>&nbsp;&nbsp;
                             <i class="bi bi-person-square"></i>
                             <strong>{{ data.author }}</strong>
-                            <p class="text-justify">{{ data.content }}</p>
+                            <p class="text-justify">{{ data.content|safe}}</p>
                         </div>
                     </div>
 
