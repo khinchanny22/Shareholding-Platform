@@ -1,0 +1,40 @@
+{% extends 'layouts/products.html' %}
+{% load static %}
+{% block content %}
+  <div class="page-content">
+      <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper" style="background-image:url({% static 'frontend/images/banner/product-banner.jpg' %});">
+            	<div class="overlay-main bg-black opacity-07"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <h1 class="text-white">About Us</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+      <!-- BREADCRUMB ROW -->
+            <div class="bg-gray-light p-tb20">
+            	<div class="container">
+                    <ul class="wt-breadcrumb breadcrumb-style-2">
+                        <li><a href="javascript:void(0);"><i class="fa fa-home"></i> Company</a></li>
+                        <li>About Us</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- BREADCRUMB ROW END -->
+    <div class="container">
+        {% for companies in page.object_list %}
+            <h2>{{ companies.company }}</h2>
+            <p class="text-justify">{{ companies.company_info }}</p>
+
+            <h2>{{ companies.mission }}</h2>
+            <p class="text-justify">{{ companies.mission_description }}</p>
+
+            <h2>{{ companies.vision }}</h2>
+            <p class="text-justify">{{ companies.vision_description }}</p>
+        {% endfor %}
+
+
+ </div>
+    </div>
+{% endblock %}

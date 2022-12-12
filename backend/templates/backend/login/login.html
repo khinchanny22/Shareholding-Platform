@@ -1,0 +1,38 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+    {% load crispy_forms_tags %}
+    {% load static %}
+    <style>
+        .row.login_center {
+            padding-top: 200px;
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        button.btn.btn-primary.left {
+            float: right;
+        }
+    </style>
+    <!--Login-->
+    <div class="container">
+        <div class="row login_center">
+            <div class="col side_center">
+                <div class="card">
+                    <div class="card-header"><h3 class="text-center">Login Application</h3></div>
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ login_form }}<br>
+                            <button class="btn btn-primary left" type="submit">Login Application</button>
+                            <br>
+                            <br>
+                            <p>Don't have an account? <a href="{% url 'register' %}">Create an account</a>.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "layouts/backend.html" %}
+{% block content %}
+    <div class="content-body">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="col"><h3>View or Detail User Profile</h3></div>
+                    <div class="col">
+                        <h3 class="text-end">
+                            <a class="text-success" href="#">
+                                <i class="bi bi-cart-check-fill"></i>
+                            </a>
+                            <a class="text-danger" href="{% url 'UpdateUsersBackend' %}">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a class="text-blue" href="{% url 'User' %}">
+                                <i class="bi bi-house-door-fill"></i>
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+                {% if user_form.errors %}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <div id="form_errors">
+                            {% for key, value in user_form.errors.items %}
+                                <strong>{{ value }}</strong>
+                            {% endfor %}
+                        </div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <img class="img-thumbnail" src="{{ data.profile.image.url }}" alt="profile-image">
+                        </div>
+                        <div class="col-9">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th>ID</th>
+                                    <td>{{ data.id }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Full Name</td>
+                                    <td>{{ user.profile.full_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>User Name</td>
+                                    <td>{{ data.username }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>{{ data.email }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Phone</td>
+                                    <td>{{ user.profile.phone }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Address</td>
+                                    <td>{{ user.profile.address }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

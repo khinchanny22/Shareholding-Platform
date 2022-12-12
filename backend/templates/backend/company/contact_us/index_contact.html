@@ -1,0 +1,94 @@
+{% extends 'layouts/backend.html' %}
+{% block content %}
+    {% load django_bootstrap5 %}
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col"><h3>List Contact Us</h3></div>
+                        <div class="col"><h3 class="text-end"><a class="text-blue" href="#">Add Contact Us</a></h3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr class="text-blue">
+                                    <th>No</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for data in page.object_list %}
+                                    <tr>
+                                        <td>{{ data.id }}</td>
+                                        <td>{{ data.username }}</td>
+                                        <td>{{ data.phone }}</td>
+                                        <td>{{ data.email|truncatechars:20 }}</td>
+                                        <td>{{ data.subject|truncatechars:20 }}</td>
+                                        <td>{{ data.message|truncatechars:50 }}</td>
+                                        <td>
+                                            <a href="{% url 'ViewContactUsBackend' data.id %}"
+                                               class="btn btn-sm btn-primary">View</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                <div class="card-body">
+                    <!--Pagination-->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            {% if page.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page.previous_page_number }}">Previous</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Previous</a>
+                                </li>
+                            {% endif %}
+                            {% for i in page.paginator.page_range %}
+                                {% if page.number == i %}
+                                    <li class="page-item active" aria-current="page">
+                      <span class="page-link">
+                        {{ i }}
+                        <span class="sr-only">(Current)</span>
+                      </span>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item"><a class="page-link"
+                                                             href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if page.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link"
+                                       href="?page={{ page.next_page_number }}">Next</a>
+                                </li>
+                            {% else %}
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="True">Next</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    <!--end of Pagination-->
+                </div>
+            </div>
+            {# end row block  #}
+
+        </div>
+    </div>
+{% endblock %}

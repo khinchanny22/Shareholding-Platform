@@ -1,0 +1,44 @@
+{% extends 'layouts/backend.html' %}
+{% block content %}
+    {% load static %}
+    <div class="content-body">
+        <!-- row -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                    <div class="col"><h3>Detail User Group</h3></div>
+                    <div class="col">
+                        <h3 class="text-end">
+                            <a class="text-success" href="#">
+                                <i class="bi bi-cart-check-fill"></i>
+                            </a>
+                            <a class="text-danger" href="#">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a class="text-blue" href="{% url 'UserGroupBackend' %}">
+                                <i class="bi bi-house-door-fill"></i>
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <td class="text-black">ID</td>
+                                <td>{{ obj.id }}</td>
+                            </tr>
+                            <tr>
+                                <td  class="text-black">Name</td>
+                                <td>{{ obj.name }}</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

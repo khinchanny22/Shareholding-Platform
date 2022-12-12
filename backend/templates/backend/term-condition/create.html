@@ -1,0 +1,44 @@
+{% extends 'layouts/backend.html' %}
+{% block content %}
+    <div class="content-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <div class="card-header"><h3 class="text-blue">Add Term Condition</h3></div>
+                    <div class="card-body">
+                        <form method="post">{% load crispy_forms_tags %}
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col">{{ form|crispy }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">{{ form.media }}</div>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .card {
+            margin-bottom: 1.875rem;
+            background-color: #fff;
+            transition: all .5s ease-in-out;
+            position: relative;
+            border: 0px solid transparent;
+            border-radius: 8px !important;
+            box-shadow: 0px 5px 5px 0px rgb(82 63 105 / 5%);
+            height: calc(100% - 30px);
+        }
+    </style>
+{% endblock %}
