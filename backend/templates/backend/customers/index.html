@@ -49,7 +49,7 @@
                     <div class="card-header">
                         <div class="col"><h3>Lists Customers</h3></div>
                         <div class="col"><h3 class="text-end">
-                            <a class="text-blue" href="{% url 'AddCustomersBackend' %}">Add Product</a>
+                            <a class="text-blue" href="{% url 'AddCustomersBackend' %}">Add Customer</a>
                         </h3>
                         </div>
                     </div>
@@ -90,9 +90,9 @@
                                         <td>#</td>
                                         <td>
                                             <a href="{% url 'ViewCustomerBackend' customer.id %}"
-                                               class="btn btn-sm btn-primary">View</a>
+                                               class="btn btn-sm btn-outline-primary">View</a>
                                             <a href="{% url 'UpdateCustomerBackend' customer.id %}"
-                                               class="btn btn-sm btn-success">Update</a>
+                                               class="btn btn-sm btn-outline-warning">Update</a>
                                         </td>
                                     </tr>
                                 {% endfor %}

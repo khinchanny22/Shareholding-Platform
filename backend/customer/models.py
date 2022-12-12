@@ -1,6 +1,7 @@
 from django.db import models
 from django_countries.fields import CountryField
 
+
 # Create your models here.
 
 class Customer(models.Model):
@@ -8,6 +9,7 @@ class Customer(models.Model):
     customer_contact = models.CharField(max_length=15, unique=True)
     customer_email = models.EmailField(unique=True)
     customer_image = models.ImageField(upload_to='customer/')
+    passport_id = models.CharField(max_length=250)
     Customer_origin = CountryField()
     customer_status = (
         ("SELECT", "SELECT"),
@@ -22,4 +24,4 @@ class Customer(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.customer_image)
+        return self.customer_name

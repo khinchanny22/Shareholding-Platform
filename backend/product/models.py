@@ -8,7 +8,7 @@ from django.utils.safestring import mark_safe # new
 
 
 class Product(models.Model):
-    product_name = models.CharField(max_length=250)
+    product_name = models.CharField(max_length=250, unique=True)
     product_price = models.IntegerField()
     product_description = models.TextField(max_length=1000)
     product_quantity = models.IntegerField()
@@ -18,6 +18,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
+
+    def TotalAmount(self):
+        return self.product_price * self.product_quantity
 
     def image_tag(self):  # new
         return mark_safe('<img src="media/media/%s" width="150" height="150" />' % (self.product_image))

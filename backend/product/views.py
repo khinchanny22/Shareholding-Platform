@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, redirect, get_object_or_404
 
 from django.contrib import messages
@@ -90,7 +89,7 @@ def UpdateProductBackend(request, id):
 @login_required
 def ViewProductBackend(request, id):
     data = get_object_or_404(Product, id=id)
-    return render(request, 'backend/product/view.html', {'data':data})
+    return render(request, 'backend/product/view.html', {'data': data})
 
 
 # start Product Cost Backend
@@ -176,3 +175,9 @@ def Post(request):
 @login_required
 def IndexLookShareBackend(request):
     return render(request, 'backend/look_for_share/index.html')
+
+
+# secondary market
+@login_required
+def SecondaryMarketBackend(request):
+    return render(request, 'backend/secondary_market/index.html')

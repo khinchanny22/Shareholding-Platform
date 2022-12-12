@@ -21,4 +21,7 @@ urlpatterns = [
 
     # test Post
     path('post_test', views.Post, name='Post'),
+
+    # secondary market backend
+    path('secondary_backend_index', views.SecondaryMarketBackend, name='SecondaryMarketBackend'),
 ]

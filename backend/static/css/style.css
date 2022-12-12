@@ -111,6 +111,20 @@ img.weekly_logo {
     margin-right: 1rem !important;
     width: 50%;
 }
+.nav-item h1 {
+    color: #272424 !important;
+    font-family: 'Line Awesome Free';
+    font-weight: bold !important;
+    font-size: 50px !important;
+}
+.form-control {
+    background: #fff;
+    border: 1px solid #c8c8c8 !important;
+    padding: 5px 20px;
+    color: #6e6e6e;
+    height: 56px;
+    border-radius: 8px !important;
+}
 
 .form-control {
     background: #fff;

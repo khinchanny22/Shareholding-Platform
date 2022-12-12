@@ -5,7 +5,7 @@ from .models import *
 
 
 class BlogForm(forms.ModelForm):
-    date = forms.DateField(widget=NumberInput(attrs={
+    start_date = forms.DateField(widget=NumberInput(attrs={
         'type': 'date',
         'class': 'form-control'
     }))
