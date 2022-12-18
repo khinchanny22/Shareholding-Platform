@@ -1,217 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8a5cb354-49c7-4373-a787-f4e1d062f002" name="Changes" comment="add">
-      <change afterPath="$PROJECT_DIR$/backend/DMS/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/migrations/0002_rename_end_data_documentmanagementsystem_end_date.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/migrations/0003_documentmanagementsystem_dms_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/migrations/0004_alter_documentmanagementsystem_document_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/DMS/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/blog/migrations/0003_alter_postblog_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/blog/migrations/0004_blogcomment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/blog/migrations/0005_alter_postblog_content.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/company/migrations/0004_contactusfrontend.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/company/migrations/0005_contactusfrontend_phone.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/company/migrations/0006_alter_address_address.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/customer/migrations/0004_alter_customer_customer_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/customer/migrations/0005_customer_customer_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/customer/migrations/0006_alter_customer_customer_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/customer/migrations/0007_alter_customer_customer_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/customer/migrations/0008_alter_customer_customer_origin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/customer/migrations/0009_customer_passport_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/dashboard/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/dashboard/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/dashboard/migrations/0002_profile_delete_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/dashboard/migrations/0003_rename_user_profile_customer_remove_profile_email_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/dashboard/migrations/0004_profile_full_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/dashboard/tokens.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/login/migrations/0002_profile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/login/migrations/0003_userprofile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/login/migrations/0004_userprofilelogin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/login/migrations/0005_delete_profile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/287526394_750748479450706_5466987104808282876_n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/8847100742407.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/Cambodia-Water-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/Cambodia-Water-1_AAXoebU.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/Cambodia-Water-1_kS1zgUZ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/Cambodia-Water-1_kkkrVMi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/Cambodia-Water-1_vneEVGS.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/coca.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/coca_R8UCfGe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/fanta.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/monireach.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/pepsi-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/pepsi-01_RhhAsi3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/blog/pepsi-01_Zt77S6U.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/customer/client_A.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/dms/CHOKCHEY_Finance__-_head_of_iT.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/dms/CHOKCHEY_Finance__-_head_of_iT_3Nw5BrI.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/dms/CHOKCHEY_Finance__-_head_of_iT_Bt2JzSk.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/dms/CHOKCHEY_Finance__-_head_of_iT_qQ1fQKs.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/dms/CHOKCHEY_Finance__-_head_of_iT_yAOQzVf.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/dms/Dynamic_Group_Cambodia_-_Product_Manager.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/dms/Screenshot_2022-12-10_at_7.05.57_PM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/dms/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/client_A.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/coca.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/fanta.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/fanta_CBcghMZ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/fanta_MWdsP6Y.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/fanta_NbWvGe2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/fanta_Pr51743.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/fanta_jsrAg8T.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/fanta_zJVnW8f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/pepsi-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/pepsi-01_cu1QbPy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/pepsi-01_pVkmHKk.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/pepsi-01_pbEwlRt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/product/pepsi-01_poP0dyE.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_image/client_A.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/2022-05-20_11.49.54.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/2022-05-20_11.49.54_Kq05L8v.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/Leaflet_for_Career_Event_at_PNC__NEA-Sokngim.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/client_A.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/client_A_FEtttcI.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/client_A_l3FZdUy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/client_A_pQFM0lA.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/coca.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/fanta-0.5-new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/fanta.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/monin.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/pepsi-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/pepsi-01_VncneCy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/pepsi-01_dMut7Iy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/upload/2022-05-25_09.22.35.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/upload/287526394_750748479450706_5466987104808282876_n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/upload/Cambodia-Water-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/upload/Cambodia-Water-1_1R0Ra3p.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/upload/Cambodia-Water-1_7Y3zsiQ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/upload/Cambodia-Water-1_IJUaGlX.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/upload/Cambodia-Water-1_VF6WyTE.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/upload/Cambodia-Water-1_sHSk6Kb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/upload/coca.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/media/upload/fanta.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/product/migrations/0012_remove_productprice_product_price_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/product/migrations/0013_productprice_product_price_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/product/migrations/0014_alter_product_product_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/product/migrations/0015_alter_product_product_name.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/product/migrations/0016_post.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/migrations/0002_alter_policy_content.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/migrations/0003_remove_policy_content_policy_contents_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/migrations/0004_termcondition_alter_policy_contents.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/migrations/0005_alter_policy_contents_alter_termcondition_contents_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/support/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/blog/view_post_blog_backend.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/company/about_us/update_about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/company/about_us/view_about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/company/admin_log/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/company/contact_us/view_contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/company/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/customers/view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/document_management_system/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/document_management_system/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/group_user/detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/group_user/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/look_for_share/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/permission/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/product/post_test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/product/view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/secondary_market/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/support/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/support/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/support/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/support/update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/support/views.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/term-condition/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/term-condition/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/term-condition/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/term-condition/update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/term-condition/views.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/users/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/users/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/users/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/backend/users/update.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/frontend/blog/frontend_post_blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/frontend/blog/frontend_post_views.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/templates/frontend/customers/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/blog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/blog/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/blog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/company/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/company/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/company/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/company/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/company/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/company/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/company/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/company/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/company/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/company/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/customer/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/customer/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/customer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/customer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/customer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dashboard/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dashboard/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dashboard/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dashboard/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dashboard/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dashboard/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/frontend/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/login/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/login/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/login/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/product/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/product/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/product/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/product/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/product/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/seller/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seller/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/seller/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/seller/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/blog/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/blog/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/blog/index_blog_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/blog/index_blog_post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/blog/update_blog_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/blog/update_blog_post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/company/about_us/index_about.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/company/about_us/index_about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/company/contact_us/index_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/company/contact_us/index_contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/customers/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/customers/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/customers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/customers/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/customers/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/customers/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/login/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/frontend/customers/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/product/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/product/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/product/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/product/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/backend/product/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/product/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/group_user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/group_user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/permission/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/permission/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/support/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/support/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/term-condition/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/term-condition/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/users/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/users/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/frontend/company/contact_us/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/frontend/company/contact_us/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/frontend/products/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/frontend/products/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/layouts/backend.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/layouts/backend.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/layouts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/layouts/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/layouts/frontend.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/layouts/frontend.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/templates/layouts/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/layouts/products.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +31,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -396,7 +200,7 @@
       <workItem from="1668409503703" duration="12763000" />
       <workItem from="1671336404375" duration="141000" />
       <workItem from="1671336558823" duration="22000" />
-      <workItem from="1671336629948" duration="307000" />
+      <workItem from="1671336629948" duration="3096000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1666368137757</created>

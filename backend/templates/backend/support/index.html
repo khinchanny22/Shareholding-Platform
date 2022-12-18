@@ -33,9 +33,9 @@
                                     <td>{{ data.title|truncatechars:50 }}</td>
                                     <td>{{ data.contents|truncatechars:50 }}</td>
                                     <td>
-                                        <a href="{% url 'ViewsPolicy' data.id %}" class="btn btn-sm btn-primary">Views</a>
-                                        <a href="{% url 'UpdatePolicy' data.id %}" class="btn btn-sm btn-success">Update</a>
-                                        <a href="{% url 'DeletePolicy' data.id %}" class="btn btn-sm btn-danger">Delete</a>
+                                        <a href="{% url 'ViewsPolicy' data.id %}" class="btn btn-sm btn-outline-primary">Views</a>
+                                        <a href="{% url 'UpdatePolicy' data.id %}" class="btn btn-sm btn-outline-info">Update</a>
+                                        <a href="{% url 'DeletePolicy' data.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
                                     </td>
                                 </tr>
                             {% endfor %}
