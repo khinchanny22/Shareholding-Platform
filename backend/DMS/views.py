@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import HttpResponse
@@ -42,3 +43,21 @@ def CreateDmsBackend(request):
     else:
         form = DmsForm()
     return render(request, 'backend/document_management_system/create.html', {'form': form})
+
+# function update documentation management system
+def UpdateDmsBackend(request, id):
+    update = DocumentManagementSystem.objects.get(id=id)
+    if request.method == "POST":
+        form = DmsForm(request.POST, request.FILES, instance=update)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Update successful!')
+            return redirect("DmsIndex")
+        message = 'Something we are wrong!'
+        return render(request, 'backend/document_management_system/update.html',
+                      {'message': message, 'update': update})
+    else:
+        form = DocumentManagementSystem.objects.get(id=id)
+        update = DmsForm(instance=form)
+        content = {'update': update, 'id': id}
+    return render(request, 'backend/document_management_system/update.html', content)

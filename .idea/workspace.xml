@@ -12,6 +12,7 @@
       <change afterPath="$PROJECT_DIR$/backend/static/frontend/images/our-team/pic21.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/static/frontend/images/our-team/pic31.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/document_management_system/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/templates/backend/document_management_system/update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/DMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DMS/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/DMS/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DMS/views.py" afterDir="false" />
@@ -221,7 +222,7 @@
       <workItem from="1671336629948" duration="8093000" />
       <workItem from="1671468131046" duration="8458000" />
       <workItem from="1672116169241" duration="596000" />
-      <workItem from="1672457461768" duration="4794000" />
+      <workItem from="1672457461768" duration="7388000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1666368137757</created>
