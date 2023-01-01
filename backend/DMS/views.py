@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
 # documents management system index
@@ -20,6 +20,11 @@ def DmsIndex(request):
         'page': page,
     }
     return render(request, 'backend/document_management_system/index.html', content)
+
+@login_required
+def DmsView(request, id):
+    data = get_object_or_404(DocumentManagementSystem, id=id)
+    return render(request, 'backend/document_management_system/detail.html', {'data':data})
 
 
 # function create DMS

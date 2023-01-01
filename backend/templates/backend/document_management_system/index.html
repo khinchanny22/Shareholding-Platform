@@ -1,49 +1,73 @@
 {% extends 'layouts/backend.html' %}
+{% load static %}
 {% block content %}
-<div class="content-body">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="card">
-                <div class="card-header">
-                    <div class="col"><h3 class="text-black">List Documents Management System</h3></div>
-                    <div class="col">
-                        <h3 class="text-end"><a class="text-blue" href="{% url 'CreateDmsBackend' %}">Add DMS Form</a></h3>
+    <div class="content-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col"><h3 class="text-black">List Documents Management System</h3></div>
+                        <div class="col">
+                            <h3 class="text-end"><a class="text-blue" href="{% url 'CreateDmsBackend' %}">Add DMS
+                                Form</a></h3>
+                        </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <table class="table">
-                        <thead class="text-blue">
-                        <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Customer Name</th>
-                            <th scope="col">Subject</th>
-                            <th scope="col">Files</th>
-                            <th scope="col">Start Date</th>
-                            <th scope="col">End Date</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for data in page.object_list %}
-                        <tr>
-                            <th scope="row">{{ data.id }}</th>
-                            <td>{{ data.name}}</td>
-                            <td>{{ data.subject}}</td>
-                            <td>{{ data.document|truncatechars:20}}</td>
-                            <td>{{ data.start_date}}</td>
-                            <td>{{ data.end_date}}</td>
-                            <td>{{ data.dms_status }}</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-outline-primary">View</a>
-                                <a href="#" class="btn btn-sm btn-outline-warning">Update</a>
-                                <a href="#" class="btn btn-sm btn btn-outline-danger">Disable</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="text-blue">
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Customer Name</th>
+                                <th scope="col">Subject</th>
+                                <th scope="col">Files</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">End Date</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for data in page.object_list %}
+                                <tr>
+                                    <th>{{ data.id }}</th>
+                                    <td>{{ data.name }}</td>
+                                    <td>{{ data.subject }}</td>
+                                    <td>
+                                        {% if data.document  %}
+                                            <img class="thumbnail clearfix" src="{{ data.document.url }}"
+                                     width="40px" height="40px" alt="">
+                                        {% else %}
+                                            <img src="{% static 'document.png' %}" alt="">
+                                        {% endif %} 
+                                        
+                                    </td>
+                                    <td>{{ data.start_date }}</td>
+                                    <td>{{ data.end_date }}</td>
+                                    <td>{{ data.dms_status }}</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                Activities
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-dark"
+                                                aria-labelledby="dropdownMenuButton2">
+                                                <li><a class="dropdown-item" href="{% url 'DmsView' data.id %}">View</a></li>
+                                                <li><a class="dropdown-item" href="#">Update</a></li>
+                                                <li><a class="dropdown-item" href="#">Disable</a></li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">Separated Setting</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="card-body">
                         <!--Pagination-->
@@ -83,8 +107,8 @@
                         </nav>
                         <!--end of Pagination-->
                     </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}

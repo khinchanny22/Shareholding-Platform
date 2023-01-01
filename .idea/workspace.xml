@@ -5,12 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a5cb354-49c7-4373-a787-f4e1d062f002" name="Changes" comment="add">
+      <change afterPath="$PROJECT_DIR$/backend/media/dms/2022-12-19_23.30.29.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/media/dms/2022-12-19_23.30.29_WYxIOIg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/media/dms/Screen_Shot_2022-12-20_at_2.38.35_PM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/media/profile_images/2022-12-19_23.30.29.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/frontend/images/our-team/pic21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/static/frontend/images/our-team/pic31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/templates/backend/document_management_system/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/DMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DMS/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/DMS/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DMS/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/company/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/company/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/static/frontend/images/banner/blog-banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/static/frontend/images/banner/blog-banner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/static/frontend/images/banner/product-banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/static/frontend/images/banner/product-banner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/static/frontend/images/our-team/pic2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/static/frontend/images/our-team/pic2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/static/frontend/images/our-team/pic3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/static/frontend/images/our-team/pic3.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/blog/index_blog_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/blog/index_blog_post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/company/about_us/index_about.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/company/about_us/index_about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/company/contact_us/index_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/company/contact_us/index_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/document_management_system/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/document_management_system/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/group_user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/group_user/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/permission/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/permission/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/support/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/support/index.html" afterDir="false" />
@@ -33,6 +48,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/backend/backend/settings.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -47,23 +65,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/khinchanny/Desktop/webapp/Shareholding-Platform",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/khinchanny/Desktop/WebApplications /Shareholding-Platform&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend/templates/backend" />
@@ -200,7 +218,10 @@
       <workItem from="1668409503703" duration="12763000" />
       <workItem from="1671336404375" duration="141000" />
       <workItem from="1671336558823" duration="22000" />
-      <workItem from="1671336629948" duration="3096000" />
+      <workItem from="1671336629948" duration="8093000" />
+      <workItem from="1671468131046" duration="8458000" />
+      <workItem from="1672116169241" duration="596000" />
+      <workItem from="1672457461768" duration="4794000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1666368137757</created>

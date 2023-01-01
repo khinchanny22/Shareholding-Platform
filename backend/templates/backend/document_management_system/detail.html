@@ -1,0 +1,78 @@
+{% extends 'layouts/backend.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col"><h3 class="text-blue">View or Detail DMS</h3></div>
+                        <div class="col text-end">
+                            <h3 class="text-end">
+                                <a class="text-success" href="#">
+                                    <i class="bi bi-cart-check-fill"></i>
+                                </a>
+                                <a class="text-danger" href="#">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <a class="text-blue" href="{% url 'DmsIndex' %}">
+                                    <i class="bi bi-house-door-fill"></i>
+                                </a>
+                            </h3>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 col-md-4 clearfix">
+                                {% if data.document %}
+                                    <img src="{{ data.document.url }}"
+                                         class="clearfix img-thumbnail img-responsive"
+                                         alt="">
+                                {% else %}
+                                    <img src="{% url 'image.png' %}" alt="">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <h3>{{ data.name }}</h3>
+                                <div class="row">
+                                    <div class="col">
+                                        <table class="table">
+                                            <tbody>
+                                            <tr>
+                                                <td class="text-black">ID</td>
+                                                <th>{{ data.id }}</th>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-black">Subject</td>
+                                                <td>{{ data.subject }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-black">Start Date</td>
+                                                <td class="text-justify">{{ data.start_date }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-black">End Date</td>
+                                                <td class="text-justify">{{ data.end_date }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-black">DMS Status</td>
+                                                <td class="text-justify">{{ data.dms_status }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-black">Description</td>
+                                                <td class="text-justify">{{ data.description|safe }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
