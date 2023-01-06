@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a5cb354-49c7-4373-a787-f4e1d062f002" name="Changes" comment="add">
+      <change afterPath="$PROJECT_DIR$/backend/customer/migrations/0010_alter_customer_customer_image.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/dms/2022-12-19_23.30.29.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/dms/2022-12-19_23.30.29_WYxIOIg.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/dms/Screen_Shot_2022-12-20_at_2.38.35_PM.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/media/profile_images/2022-12-19_23.30.29.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/product/migrations/0017_alter_product_product_name.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/static/frontend/images/our-team/pic21.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/static/frontend/images/our-team/pic31.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/templates/backend/document_management_system/detail.html" afterDir="false" />
@@ -17,6 +19,8 @@
       <change beforePath="$PROJECT_DIR$/backend/DMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DMS/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/DMS/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DMS/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/company/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/company/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/customer/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/customer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/customer/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/static/frontend/images/banner/blog-banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/static/frontend/images/banner/blog-banner.jpg" afterDir="false" />
@@ -26,6 +30,7 @@
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/blog/index_blog_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/blog/index_blog_post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/company/about_us/index_about.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/company/about_us/index_about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/company/contact_us/index_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/company/contact_us/index_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/backend/customers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/customers/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/document_management_system/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/document_management_system/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/group_user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/group_user/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/templates/backend/permission/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/templates/backend/permission/index.html" afterDir="false" />
@@ -222,7 +227,9 @@
       <workItem from="1671336629948" duration="8093000" />
       <workItem from="1671468131046" duration="8458000" />
       <workItem from="1672116169241" duration="596000" />
-      <workItem from="1672457461768" duration="7388000" />
+      <workItem from="1672457461768" duration="9881000" />
+      <workItem from="1672900000933" duration="414000" />
+      <workItem from="1672991635752" duration="2395000" />
     </task>
     <task id="LOCAL-00001" summary="add">
       <created>1666368137757</created>

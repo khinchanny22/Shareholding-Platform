@@ -25,18 +25,42 @@ def Customers(request):
 
 @login_required
 def AddCustomersBackend(request):
+    # check if the request is post
     if request.method == 'POST':
+
+        # Pass the form data to the form class
         details = CustomerForm(request.POST, request.FILES)
+
+        # In the 'form' class the clean function
+        # is defined, if all the data is correct
+        # as per the clean function, it returns true
         if details.is_valid():
+
+            # Temporarily make an object to be add some
+            # logic into the data if there is such a need
+            # before writing to the database
             post = details.save(commit=False)
+
+            # Finally write the changes into database
             post.save()
-            messages.success(request, 'Data Created Successful!')
+            messages.success(request, 'Data Customer Successful!')
+            # redirect it to some another page indicating data
+            # was inserted successfully
             return redirect('Customers')
+
         else:
-            return render(request, 'backend/customers/create.html', {'form': details})
+
+            # Redirect back to the same page if the data
+            # was invalid
+            return render(request, "backend/customers/create.html", {'form': details})
     else:
+
+        # If the request is a GET request then,
+        # create an empty form object and
+        # render it into the page
         form = CustomerForm(None)
-    return render(request, 'backend/customers/create.html', {'form': form})
+        # return render(request, 'home.html', {'form': form})
+        return render(request, 'backend/customers/create.html', {'form': form})
 
 
 @login_required

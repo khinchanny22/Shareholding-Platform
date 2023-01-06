@@ -89,10 +89,23 @@
                                         <td>{{ customer.customer_status }}</td>
                                         <td>#</td>
                                         <td>
-                                            <a href="{% url 'ViewCustomerBackend' customer.id %}"
-                                               class="btn btn-sm btn-outline-primary">View</a>
-                                            <a href="{% url 'UpdateCustomerBackend' customer.id %}"
-                                               class="btn btn-sm btn-outline-warning">Update</a>
+                                            <div class="dropdown">
+                                            <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                Activities
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-dark"
+                                                aria-labelledby="dropdownMenuButton2">
+                                                <li><a class="dropdown-item" href="{% url 'ViewCustomerBackend' customer.id %}">View</a></li>
+                                                <li><a class="dropdown-item" href="{% url 'UpdateCustomerBackend' customer.id %}">Update</a></li>
+                                                <li><a class="dropdown-item" href="#">Disable</a></li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">Separated Setting</a></li>
+                                            </ul>
+                                        </div>
                                         </td>
                                     </tr>
                                 {% endfor %}
